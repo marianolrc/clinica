@@ -24,3 +24,10 @@ body{
     background: rgb(238,242,243);
     background: radial-gradient(circle, rgba(238,242,243,1) 0%, rgba(142,158,171,1) 100%);
 }
+
+/* Footer styles */
+
+.footer-img{
+    height: 50px;
+
+}
