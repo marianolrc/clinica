@@ -29,3 +29,59 @@ body{
     background: rgb(238,242,243);
     background: radial-gradient(circle, rgba(238,242,243,1) 0%, rgba(142,158,171,1) 100%);
 }
+
+/*boton propaganda*/
+
+.btnpropaganda{
+    margin-left: 10rem;
+}
+/*cards ofreciendo servicios*/
+
+  .card1 {
+    width: 25rem;
+    height: 30rem;
+    border-radius: 20px;
+    background: #ffffff;
+    position: relative;
+    padding: 1rem;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    margin-top: 1rem;
+   }
+   
+   .card1-details {
+    color: rgb(222, 76, 50);
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
+
+   }
+   
+   .card1-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #008bf8;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+   }
+   
+   /*Hover*/
+   .card1:hover {
+    border-color: #008bf8;
+    box-shadow: 10px 4px 18px 10px rgba(0, 0, 0, 0.25);
+   }
+   
+   .card1:hover .card1-button {
+    transform: translate(-50%, 30%);
+    opacity: 2;
+   }
