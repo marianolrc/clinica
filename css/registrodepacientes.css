@@ -87,64 +87,34 @@ body{
     text-shadow: 2px 2px 6px white;
 }
 
-/*boton propaganda*/
+/*formulario registro de pacientes*/
+.container{
+   width: 80%;
+   max-width: 1200px;
+   min-width: 600px;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: repeat(1, 1fr);
+   grid-gap: 25px;
+   padding: 25px 25px;
+   background-color:rgba(79, 64, 123, 0.3);
+   font-weight: bold;
+   border-radius: 0.5em;
+   box-shadow: inset 1px 1px 22px 4px;
 
-.btnpropaganda{
-    margin-left: 10rem;
 }
-/*cards ofreciendo servicios*/
 
-  .card1 {
-    width: 25rem;
-    height: 30rem;
-    border-radius: 20px;
-    background: #ffffff;
-    position: relative;
-    padding: 1rem;
-    border: 2px solid #c3c6ce;
-    transition: 0.5s ease-out;
-    overflow: visible;
-    margin-top: 1rem;
-   }
-   
-   .card1-details {
-    color: rgb(222, 76, 50);
-    height: 100%;
-    gap: .5em;
-    display: grid;
-    place-content: center;
+.imagen{
+   width: 150px;
+   display: flex;
+   justify-content: center;
+   align-content: center;
+}
 
-   }
-   
-   .card1-button {
-    transform: translate(-50%, 125%);
-    width: 60%;
-    border-radius: 1rem;
-    border: none;
-    background-color: #008bf8;
-    color: #fff;
-    font-size: 1rem;
-    padding: .5rem 1rem;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    opacity: 0;
-    transition: 0.3s ease-out;
-   }
-   
-   /*Hover*/
-   .card1:hover {
-    border-color: #008bf8;
-    box-shadow: 10px 4px 18px 10px rgba(0, 0, 0, 0.25);
-   }
-   
-   .card1:hover .card1-button {
-    transform: translate(-50%, 30%);
-    opacity: 2;
-   }
-   /* Footer styles */
 
-.footer-img{
-    height: 50px;
-
+.contenedor-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
