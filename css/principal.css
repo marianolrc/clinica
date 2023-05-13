@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -12,9 +13,15 @@
     background: linear-gradient(to left, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
 }
+
+
+.btn {
+  padding: .45rem 1.5rem .35rem;
+}
+
 header nav a{
     font-family: 'Montserrat';
-    font-weight: 600;
+    font-weight: 900;
     
 }
 .navbar-brand{
@@ -23,9 +30,115 @@ header nav a{
 }
 
 body{
-    /* background: #8e9eab; 
-    background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab); 
-    background: linear-gradient(to right, #eef2f3, #8e9eab ); */
     background: rgb(238,242,243);
     background: radial-gradient(circle, rgba(238,242,243,1) 0%, rgba(142,158,171,1) 100%);
 }
+
+.login-mdl{
+    background: rgb(238,242,243);
+    background: radial-gradient(circle, rgba(238,242,243,1) 0%, rgba(142,158,171,1) 100%);
+}
+.login-mdl .modal-content{
+    background: rgb(238,242,243);
+    background: radial-gradient(circle, rgba(238,242,243,1) 0%, rgba(142,158,171,1) 100%);
+}
+
+
+.modal-content .boton-log{
+    background: #FEAC5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none;
+    border-radius: 2rem;
+    color: black;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    text-shadow: 2px 2px 8px black;
+    padding: 1rem;
+    margin: 0 30%;
+    width: 40%;
+    transition: all 1s;
+}
+.modal-content .boton-log:hover{
+    background: #FEAC5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+   
+}
+.login-sup{
+    color: #E52C23 !important;
+    font-family: 'Montserrat';
+    font-size: 1em;
+    font-weight: 900;
+    background-image: linear-gradient(#E52C23, #E52C23);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+
+    text-shadow: 2px 2px 6px white;
+}
+
+.login-sup:hover{
+    transition: background-size .4s ease-in-out;
+    background-size: 100% 2px;
+    color: #E52C23 !important;
+    border-radius: 5px;
+    text-shadow: 2px 2px 6px white;
+}
+
+/*boton propaganda*/
+
+.btnpropaganda{
+    margin-left: 10rem;
+}
+/*cards ofreciendo servicios*/
+
+  .card1 {
+    width: 25rem;
+    height: 30rem;
+    border-radius: 20px;
+    background: #ffffff;
+    position: relative;
+    padding: 1rem;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    margin-top: 1rem;
+   }
+   
+   .card1-details {
+    color: rgb(222, 76, 50);
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
+
+   }
+   
+   .card1-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #008bf8;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+   }
+   
+   /*Hover*/
+   .card1:hover {
+    border-color: #008bf8;
+    box-shadow: 10px 4px 18px 10px rgba(0, 0, 0, 0.25);
+   }
+   
+   .card1:hover .card1-button {
+    transform: translate(-50%, 30%);
+    opacity: 2;
+   }
