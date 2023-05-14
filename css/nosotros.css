@@ -85,7 +85,9 @@ body{
     text-shadow: 2px 2px 6px white;
 }
 
-/*boton propaganda*/
+.heading {
+    background-color: red;
+}
 
 
    /* Footer styles */
@@ -94,3 +96,5 @@ body{
     height: 50px;
 
 }
+
+
