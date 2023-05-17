@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestadores</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="../css/tablaPrest.css">
+    <!-- Scripts  -->
+    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script defer src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script defer src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script defer src="../js/tablaPrest.js"></script>
+</head>
+
+<body>
+    <div class="hero container d-flex justify-content-center">
+        <img src="../assets/img/hero-img.png" class="w-100" alt="imagen-hero">
+    </div>
+    <div class="container pt-5 pb-5">
+        <table id="example" class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Prestador</th>
+                    <th>Especialidad</th>
+                    <th>Localidad</th>
+                    <th>Domicilio</th>
+                    <th>Teléfono</th>
+                    <th>Horarios</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lucía Rodríguez</td>
+                    <td>Pediatra</td>
+                    <td>San Miguel de Tucumán</td>
+                    <td>Av. Belgrano 789</td>
+                    <td>tel-4347892</td>
+                    <td>Lun a vie 08:00 a 16:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Martín López</td>
+                    <td>Ginecólogo</td>
+                    <td>Buenos Aires</td>
+                    <td>Av. Cabildo 1234</td>
+                    <td>tel-4341235</td>
+                    <td>Lun a jue 10:00 a 19:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Mariana Fernández</td>
+                    <td>Cardiólogo</td>
+                    <td>Córdoba</td>
+                    <td>San Lorenzo 456</td>
+                    <td>tel-4344567</td>
+                    <td>Lun a vie 09:00 a 18:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Ignacio Pérez</td>
+                    <td>Nutricionista</td>
+                    <td>La Plata</td>
+                    <td>Av. 13 890</td>
+                    <td>tel-4347893</td>
+                    <td>Lun a vie 08:30 a 17:30 HS</td>
+                </tr>
+                <tr>
+                    <td>Carla Gutiérrez</td>
+                    <td>Oftalmólogo</td>
+                    <td>Salta</td>
+                    <td>San Martín 789</td>
+                    <td>tel-4347894</td>
+                    <td>Lun a vie 09:30 a 18:30 HS</td>
+                </tr>
+                <tr>
+                    <td>Federico González</td>
+                    <td>Endocrinólogo</td>
+                    <td>Mendoza</td>
+                    <td>Av. San Martín 876</td>
+                    <td>tel-4349877</td>
+                    <td>Lun a vie 08:00 a 17:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Valeria Martínez</td>
+                    <td>Traumatólogo</td>
+                    <td>Mar del Plata</td>
+                    <td>Av. Independencia 345</td>
+                    <td>tel-4343457</td>
+                    <td>Lun a vie 09:00 a 18:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Andrés Gómez</td>
+                    <td>Odontólogo</td>
+                    <td>Rosario</td>
+                    <td>San Luis 789</td>
+                    <td>tel-4347895</td>
+                    <td>Lun a vie 10:00 a 19:00 HS</td>
+                </tr>
+                <tr>
+                    <td>María García</td>
+                    <td>Pediatra</td>
+                    <td>Tandil</td>
+                    <td>Av. Del Valle 456</td>
+                    <td>tel-4344568</td>
+                    <td>Lun a vie 08:00 a 17:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Luciano Rodríguez</td>
+                    <td>Ginecólogo</td>
+                    <td>San Juan</td>
+                    <td>Av. Rawson 1234</td>
+                    <td>tel-4341236</td>
+                    <td>Lun a vie 09:00 a 18:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Camila Fernández</td>
+                    <td>Cardiólogo</td>
+                    <td>Neuquén</td>
+                    <td>Av. Olascoaga 789</td>
+                    <td>tel-4347896</td>
+                    <td>Lun a vie 10:00 a 19:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Agustina Díaz</td>
+                    <td>Nutricionista</td>
+                    <td>Río Cuarto</td>
+                    <td>Av. España 890</td>
+                    <td>tel-4347897</td>
+                    <td>Lun a vie 08:30 a 17:30 HS</td>
+                </tr>
+                <tr>
+                    <td>Sebastián Pérez</td>
+                    <td>Oftalmólogo</td>
+                    <td>Misiones</td>
+                    <td>Av. Santa Catalina 456</td>
+                    <td>tel-4344569</td>
+                    <td>Lun a vie 09:30 a 18:30 HS</td>
+                </tr>
+                <tr>
+                    <td>Marcela Torres</td>
+                    <td>Endocrinólogo</td>
+                    <td>Rafaela</td>
+                    <td>Av. Santa Fe 876</td>
+                    <td>tel-4349878</td>
+                    <td>Lun a vie 08:00 a 17:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Pablo Fernández</td>
+                    <td>Traumatólogo</td>
+                    <td>San Luis</td>
+                    <td>San Martín 345</td>
+                    <td>tel-4343458</td>
+                    <td>Lun a vie 09:00 a 18:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Martina Gómez</td>
+                    <td>Odontólogo</td>
+                    <td>San Rafael</td>
+                    <td>Av. Hipólito Yrigoyen 789</td>
+                    <td>tel-4347899</td>
+                    <td>Lun a vie 10:00 a 19:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Martín González</td>
+                    <td>Pediatra</td>
+                    <td>Bahía Blanca</td>
+                    <td>Av. Colón 1234</td>
+                    <td>tel-4341237</td>
+                    <td>Lun a vie 08:00 a 17:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Valentina García</td>
+                    <td>Ginecóloga</td>
+                    <td>La Plata</td>
+                    <td>Calle 51 567</td>
+                    <td>tel-4345678</td>
+                    <td>Lun a vie 09:00 a 18:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Tomás Rodríguez</td>
+                    <td>Cardiólogo</td>
+                    <td>Córdoba</td>
+                    <td>Av. Colón 789</td>
+                    <td>tel-4347890</td>
+                    <td>Lun a vie 10:00 a 19:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Luciana Acosta</td>
+                    <td>Nutricionista</td>
+                    <td>San Miguel de Tucumán</td>
+                    <td>Av. Mitre 456</td>
+                    <td>tel-4344562</td>
+                    <td>Lun a vie 08:30 a 17:30 HS</td>
+                </tr>
+                <tr>
+                    <td>Emiliano Torres</td>
+                    <td>Oftalmólogo</td>
+                    <td>Corrientes</td>
+                    <td>Av. Independencia 789</td>
+                    <td>tel-4347893</td>
+                    <td>Lun a vie 09:30 a 18:30 HS</td>
+                </tr>
+                <tr>
+                    <td>Yuri Berry</td>
+                    <td>Chief Marketing Officer (CMO)</td>
+                    <td>New York</td>
+                    <td>40</td>
+                    <td>2009-06-25</td>
+                    <td>$675,000</td>
+                </tr>
+                <tr>
+                    <td>Julieta García</td>
+                    <td>Endocrinóloga</td>
+                    <td>Santa Fe</td>
+                    <td>Av. Freyre 876</td>
+                    <td>tel-4349874</td>
+                    <td>Lun a vie 08:00 a 17:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Juan López</td>
+                    <td>Traumatólogo</td>
+                    <td>Salta</td>
+                    <td>Av. San Martín 345</td>
+                    <td>tel-4343451</td>
+                    <td>Lun a vie 09:00 a 18:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Agustín Gómez</td>
+                    <td>Odontólogo</td>
+                    <td>Córdoba</td>
+                    <td>Av. Vélez Sársfield 789</td>
+                    <td>tel-4347895</td>
+                    <td>Lun a vie 10:00 a 19:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Mariana López</td>
+                    <td>Ginecóloga</td>
+                    <td>Mar del Plata</td>
+                    <td>Calle 12 de Octubre 1234</td>
+                    <td>tel-4341234</td>
+                    <td>Lun a vie 08:00 a 17:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Sebastián García</td>
+                    <td>Cardiólogo</td>
+                    <td>Rosario</td>
+                    <td>Calle Córdoba 567</td>
+                    <td>tel-4345672</td>
+                    <td>Lun a vie 09:00 a 18:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Camila Martínez</td>
+                    <td>Pediatra</td>
+                    <td>Tucumán</td>
+                    <td>Calle Laprida 789</td>
+                    <td>tel-4347897</td>
+                    <td>Lun a vie 10:00 a 19:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Martín Fernández</td>
+                    <td>Traumatólogo</td>
+                    <td>Neuquén</td>
+                    <td>Calle Belgrano 456</td>
+                    <td>tel-4344568</td>
+                    <td>Lun a vie 08:30 a 17:30 HS</td>
+                </tr>
+                <tr>
+                    <td>Luciana Rodríguez</td>
+                    <td>Nutricionista</td>
+                    <td>Buenos Aires</td>
+                    <td>Calle Av. Rivadavia 5678</td>
+                    <td>tel-4345673</td>
+                    <td>Lun a vie 09:30 a 18:30 HS</td>
+                </tr>
+                <tr>
+                    <td>Juan Pérez</td>
+                    <td>Oftalmólogo</td>
+                    <td>Córdoba</td>
+                    <td>Calle Obispo Trejo 876</td>
+                    <td>tel-4349876</td>
+                    <td>Lun a vie 08:00 a 17:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Agustina González</td>
+                    <td>Endocrinóloga</td>
+                    <td>La Plata</td>
+                    <td>Calle 7 345</td>
+                    <td>tel-4343459</td>
+                    <td>Lun a vie 09:00 a 18:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Lucas Rodríguez</td>
+                    <td>Odontólogo</td>
+                    <td>Mar del Plata</td>
+                    <td>Calle Jujuy 789</td>
+                    <td>tel-4347891</td>
+                    <td>Lun a vie 10:00 a 19:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Alejandra García</td>
+                    <td>Pediatra</td>
+                    <td>Mendoza</td>
+                    <td>Calle San Martín 123</td>
+                    <td>tel-4341231</td>
+                    <td>Lun a vie 08:00 a 17:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Diego Martínez</td>
+                    <td>Cardiólogo</td>
+                    <td>La Plata</td>
+                    <td>Calle 12 345</td>
+                    <td>tel-4343456</td>
+                    <td>Lun a vie 09:00 a 18:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Ana Rodríguez</td>
+                    <td>Ginecóloga</td>
+                    <td>Córdoba</td>
+                    <td>Calle San Juan 567</td>
+                    <td>tel-4345674</td>
+                    <td>Lun a vie 10:00 a 19:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Julián Fernández</td>
+                    <td>Traumatólogo</td>
+                    <td>Buenos Aires</td>
+                    <td>Calle Uruguay 789</td>
+                    <td>tel-4347893</td>
+                    <td>Lun a vie 08:30 a 17:30 HS</td>
+                </tr>
+                <tr>
+                    <td>Sofía Pérez</td>
+                    <td>Nutricionista</td>
+                    <td>Tucumán</td>
+                    <td>Calle 25 de Mayo 876</td>
+                    <td>tel-4349875</td>
+                    <td>Lun a vie 09:30 a 18:30 HS</td>
+                </tr>
+                <tr>
+                    <td>Luisa González</td>
+                    <td>Endocrinóloga</td>
+                    <td>Rosario</td>
+                    <td>Calle Pellegrini 456</td>
+                    <td>tel-4344561</td>
+                    <td>Lun a vie 08:00 a 17:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Martín Sánchez</td>
+                    <td>Oftalmólogo</td>
+                    <td>Neuquén</td>
+                    <td>Calle Roca 345</td>
+                    <td>tel-4343453</td>
+                    <td>Lun a vie 09:00 a 18:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Luciana López</td>
+                    <td>Odontólogo</td>
+                    <td>Mar del Plata</td>
+                    <td>Calle Entre Ríos 789</td>
+                    <td>tel-4347896</td>
+                    <td>Lun a vie 10:00 a 19:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Carlos Rodríguez</td>
+                    <td>Pediatra</td>
+                    <td>Salta</td>
+                    <td>Calle Buenos Aires 234</td>
+                    <td>tel-4342348</td>
+                    <td>Lun a vie 08:00 a 17:00 HS</td>
+                </tr>
+                <tr>
+                    <td>María Fernández</td>
+                    <td>Cardióloga</td>
+                    <td>Córdoba</td>
+                    <td>Calle Chacabuco 567</td>
+                    <td>tel-4345672</td>
+                    <td>Lun a vie 09:00 a 18:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Luciano Gómez</td>
+                    <td>Ginecólogo</td>
+                    <td>Buenos Aires</td>
+                    <td>Calle Corrientes 456</td>
+                    <td>tel-4344564</td>
+                    <td>Lun a vie 10:00 a 19:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Ana Castro</td>
+                    <td>Traumatóloga</td>
+                    <td>Córdoba</td>
+                    <td>Calle Obispo Trejo 678</td>
+                    <td>tel-4346789</td>
+                    <td>Lun a vie 08:30 a 17:30 HS</td>
+                </tr>
+                <tr>
+                    <td>Juan Cruz</td>
+                    <td>Nutricionista</td>
+                    <td>La Plata</td>
+                    <td>Calle 1 234</td>
+                    <td>tel-4342345</td>
+                    <td>Lun a vie 09:30 a 18:30 HS</td>
+                </tr>
+                <tr>
+                    <td>Marcela Suárez</td>
+                    <td>Endocrinóloga</td>
+                    <td>Buenos Aires</td>
+                    <td>Calle Florida 123</td>
+                    <td>tel-4341238</td>
+                    <td>Lun a vie 08:00 a 17:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Andrés López</td>
+                    <td>Oftalmólogo</td>
+                    <td>Salta</td>
+                    <td>Calle San Martín 345</td>
+                    <td>tel-4343459</td>
+                    <td>Lun a vie 09:00 a 18:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Silvina Gutiérrez</td>
+                    <td>Odontóloga</td>
+                    <td>Córdoba</td>
+                    <td>Calle Lima 789</td>
+                    <td>tel-4347892</td>
+                    <td>Lun a vie 10:00 a 19:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Luisa González</td>
+                    <td>Pediatra</td>
+                    <td>Mar del Plata</td>
+                    <td>Calle Belgrano 789</td>
+                    <td>tel-4347891</td>
+                    <td>Lun a vie 08:00 a 17:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Emilio Sánchez</td>
+                    <td>Cardiólogo</td>
+                    <td>Buenos Aires</td>
+                    <td>Calle Lavalle 234</td>
+                    <td>tel-4342342</td>
+                    <td>Lun a vie 09:00 a 18:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Marta Pérez</td>
+                    <td>Ginecóloga</td>
+                    <td>Córdoba</td>
+                    <td>Calle Santa Rosa 456</td>
+                    <td>tel-4344566</td>
+                    <td>Lun a vie 10:00 a 19:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Lucas Torres</td>
+                    <td>Traumatólogo</td>
+                    <td>Salta</td>
+                    <td>Calle Balcarce 678</td>
+                    <td>tel-4346781</td>
+                    <td>Lun a vie 08:30 a 17:30 HS</td>
+                </tr>
+                <tr>
+                    <td>Camila Varela</td>
+                    <td>Nutricionista</td>
+                    <td>Buenos Aires</td>
+                    <td>Calle Avellaneda 234</td>
+                    <td>tel-4342343</td>
+                    <td>Lun a vie 09:30 a 18:30 HS</td>
+                </tr>
+                <tr>
+                    <td>Maximiliano Acosta</td>
+                    <td>Endocrinólogo</td>
+                    <td>Córdoba</td>
+                    <td>Calle 27 de Abril 123</td>
+                    <td>tel-4341237</td>
+                    <td>Lun a vie 08:00 a 17:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Marina Díaz</td>
+                    <td>Oftalmóloga</td>
+                    <td>La Plata</td>
+                    <td>Calle 13 345</td>
+                    <td>tel-4343454</td>
+                    <td>Lun a vie 09:00 a 18:00 HS</td>
+                </tr>
+                <tr>
+                    <td>Alberto Castro</td>
+                    <td>Odontólogo</td>
+                    <td>Salta</td>
+                    <td>Calle San Luis 789</td>
+                    <td>tel-4347893</td>
+                    <td>Lun a vie 10:00 a 19:00 HS</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Prestador</th>
+                    <th>Especialidad</th>
+                    <th>Localidad</th>
+                    <th>Domicilio</th>
+                    <th>Teléfono</th>
+                    <th>Horarios</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+
+</html>
