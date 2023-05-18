@@ -94,10 +94,21 @@ body{
     letter-spacing: 1px;
 }
 
+.roles select{
+    border: 2px solid ;
+    border-radius: .5rem;
+    background: none;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-weight: 600;
+}
+.roles select.active , .roles select:focus{
+    border: none;
+}
 .ingreso-como .texto-ingcomo{
     font-weight: 600;
-    text-decoration: underline double;
     text-shadow: 2px 2px 6px white;
+    
 
 }
 

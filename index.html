@@ -117,20 +117,14 @@
                   <!-- Pills content -->
                   <div class="tab-content">
                     <div class="tab-pane fade active show" id="pills-login" role="tabpanel" aria-labelledby="mdb-tab-login">
-                      <form>
+                      <form class="form-login">
                         <div class="text-center mb-2 ingreso-como">
-                          <p class="texto-ingcomo">Ingresar como:</p>
-                          <div class="form-check">
-                            <input class="form-check-input" type="radio" name="ingreso" id="paciente">
-                            <label class="form-check-label" for="paciente">
-                              Paciente
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="radio" name="ingreso" id="profesional">
-                            <label class="form-check-label" for="profesional">
-                              Profesional
-                            </label>
+                          <label class="texto-ingcomo" for="role">Ingresar como:</label>
+                          <div class="form-check roles">
+                            <select name="role" id="role">
+                              <option value="profesional">Profesional</option>
+                              <option value="paciente">Paciente</option>
+                            </select>
                           </div>
     
                         </div>
