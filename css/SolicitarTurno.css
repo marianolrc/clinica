@@ -1,4 +1,28 @@
+/*  Nav-Tabs */
+
+.cont-cliente{
+    margin: 0;
+    padding: 0;
+
+}
+
+.cont-cliente .nav-tabs{
+    background-image: radial-gradient(#2980B9,#6DD5FA);
+    padding: 0;
+    margin: 0;
+}
+.cont-cliente .nav-tabs .nav-item .nav-link.active{
+    background-image: radial-gradient(#373B44,#4286f4);
+}
+.cont-cliente .nav-tabs .nav-item .nav-link{
+    color: aliceblue;
+    font-size: 1em;
+    font-weight: 600;
+    text-shadow: 2px 2px 8px#373B44;
+}
+
 /*formulario solicitar turno*/
+
 .container{
     width: 80%;
     max-width: 1200px;
