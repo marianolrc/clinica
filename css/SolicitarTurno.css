@@ -1,0 +1,31 @@
+/*formulario solicitar turno*/
+.container{
+    width: 80%;
+    max-width: 1200px;
+    min-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 25px;
+    padding: 25px 25px;
+    background-color:rgba(79, 64, 123, 0.3);
+    font-weight: bold;
+    border-radius: 0.5em;
+    box-shadow: inset 1px 1px 22px 4px;
+ 
+ }
+ 
+ .imagen{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+ }
+ 
+ 
+ .contenedor-img{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+ }

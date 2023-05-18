@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat';
 }
 
 
@@ -34,10 +35,7 @@ body{
     background: radial-gradient(circle, rgba(238,242,243,1) 0%, rgba(142,158,171,1) 100%);
 }
 
-.login-mdl{
-    background: rgb(238,242,243);
-    background: radial-gradient(circle, rgba(238,242,243,1) 0%, rgba(142,158,171,1) 100%);
-}
+
 .login-mdl .modal-content{
     background: rgb(238,242,243);
     background: radial-gradient(circle, rgba(238,242,243,1) 0%, rgba(142,158,171,1) 100%);
@@ -69,8 +67,9 @@ body{
 .login-sup{
     color: #E52C23 !important;
     font-family: 'Montserrat';
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: 900;
+    
     background-image: linear-gradient(#E52C23, #E52C23);
     background-position: 0% 100%;
     background-repeat: no-repeat;
@@ -85,6 +84,27 @@ body{
     color: #E52C23 !important;
     border-radius: 5px;
     text-shadow: 2px 2px 6px white;
+}
+
+.ingreso-como{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+}
+
+.ingreso-como .texto-ingcomo{
+    font-weight: 600;
+    text-decoration: underline double;
+    text-shadow: 2px 2px 6px white;
+
+}
+
+.texto-regcomo{
+    font-weight: 600;
+    text-shadow: 2px 2px 6px white;
+    font-size: 1.25em;
 }
 
 /*boton propaganda*/

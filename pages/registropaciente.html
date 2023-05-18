@@ -16,7 +16,7 @@
 <!-- Container wrapper -->
 <div class="container-fluid">
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#"><span><img src="../assets/img/reddialmed.png" alt="" width="30px"></span></a>
+  <a class="navbar-brand" href="#"><span><img src="assets/reddialmed.png" alt="" width="30px"></span></a>
 
   <!-- Toggle button -->
   <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
@@ -79,9 +79,8 @@
             </a>
       </li>
       <li class="nav-item text-center mx-2 mx-lg-1">
-        <a class="nav-link" href="#!">
-
-          Registrarse
+        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#ModalReg">
+          Registrarse                      
         </a>
       </li>
     </ul>
@@ -100,7 +99,7 @@
 <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
-
+<!-- Inicio Modal Ingresar  -->
 <div class="modal fade login-mdl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-lg">
   <div class="modal-content">
@@ -118,23 +117,24 @@
       <div class="tab-content">
         <div class="tab-pane fade active show" id="pills-login" role="tabpanel" aria-labelledby="mdb-tab-login">
           <form>
-            <div class="text-center mb-3">
-              <p>Ingresar con:</p>
-              <button type="button" class="btn btn-primary btn-floating mx-1">
-                <i class="fab fa-facebook-f"></i>
-              </button>
-
-              <button type="button" class="btn btn-primary btn-floating mx-1">
-                <i class="fab fa-google"></i>
-              </button>
-
-              <button type="button" class="btn btn-primary btn-floating mx-1">
-                <i class="fab fa-twitter"></i>
-              </button>
+            <div class="text-center mb-2 ingreso-como">
+              <p class="texto-ingcomo">Ingresar como:</p>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="ingreso" id="paciente">
+                <label class="form-check-label" for="paciente">
+                  Paciente
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="ingreso" id="profesional">
+                <label class="form-check-label" for="profesional">
+                  Profesional
+                </label>
+              </div>
 
             </div>
 
-            <p class="text-center">O:</p>
+            <!-- <p class="text-center">O:</p> -->
 
             <!-- Email input -->
             <div class="form-outline mb-4">
@@ -179,9 +179,26 @@
   </div>
 </div>
 </div>
+<!-- Fin Modal Ingresar -->
 
+<!-- Inicio Modal Registrar -->
+<div class="modal fade login-mdl" id="ModalReg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-sm">
+  <div class="modal-content text-center">
+    <div class="modal-header bg-dark text-white d-flex justify-content-center">
+      <h5 class="modal-title texto-regcomo" id="exampleModalLabel">Registrar Como:</h5>
+    </div>
+    <div class="modal-body  d-flex justify-content-between">
+      <a type="button" class="btn btn-outline-primary">Paciente</a>
+      <a type="button" class="btn btn-outline-primary">Prestador</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Fin Modal Registrar -->
 </header>
     <!--Inicio formulario registro de pacientes-->
+
     <main class="container mt-4">
         <div class="contenedor-img">
           <img class="imagen" src="../assets/img/registro de paciente.png" width="50px" class="reg-img" alt="registro de pacientes">
