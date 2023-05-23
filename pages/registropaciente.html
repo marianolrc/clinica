@@ -199,16 +199,16 @@
 </header>
     <!--Inicio formulario registro de pacientes-->
 
-    <main class="container mt-4">
+    <main class="container mt-4 container-fluid">
         <div class="contenedor-img">
           <img class="imagen" src="../assets/img/registro de paciente.png" width="50px" class="reg-img" alt="registro de pacientes">
           <h3>Registro de Pacientes</h3>
         </div>
         <hr style="border: 5px solid;">
-            <form class="row g-3 needs-validation" novalidate>
-                <div class="col-4">
+            <form id="formRegPacientes" class="row g-3 needs-validation" novalidate>
+                <div class="col-12 col-m-6 col-lg-6">
                     <label for="usuario" class="form-label">Usuario</label>
-                    <input type="text" name="usuario" id="usuario" class="form-control" value="" required>
+                    <input type="text" name="usuario" id="usuario" class="form-control" value="" required minlength="6" maxlength="18">
                     <div class="valid-feedback">
                       ok
                     </div>
@@ -217,9 +217,9 @@
                     </div>
 
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-m-6 col-lg-6">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" name="email" id="email" class="form-control" value="" required>
+                    <input type="email" name="email" id="email" class="form-control" value="" required minlength="8" maxlength="35">
                     <div class="valid-feedback">
                       ok
                     </div>
@@ -228,9 +228,9 @@
                     </div>    
                   </div>
 
-                <div class="col-4">
+                <div class="col-12 col-m-6 col-lg-6">
                     <label for="contraseña" class="form-label">Contraseña</label>
-                    <input type="password" name="password" id="contraseña" class="form-control" value="" required>
+                    <input type="password" name="password" id="contraseña" class="form-control" value="" required minlength="8" maxlength="20">
                     <div class="valid-feedback">
                       ok
                     </div>
@@ -238,9 +238,19 @@
                       valor requerido
                     </div>  
                   </div>
-                <div class="col-4">
+                  <div class="col-12 col-m-6 col-lg-6">
+                    <label for="re-contraseña" class="form-label">Repetir Contraseña</label>
+                    <input type="password" name="re-contraseña" id="re-contraseña" class="form-control" value="" required minlength="8" maxlength="20">   
+                    <div class="valid-feedback">
+                      ok
+                    </div>
+                    <div class="invalid-feedback">
+                      valor requerido
+                    </div>  
+                  </div>
+                <div class="col-12 col-m-6 col-lg-6">
                     <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" name="apellido" id="apellido" class="form-control" value="" required>
+                    <input type="text" name="apellido" id="apellido" class="form-control" value="" required minlength="1" maxlength="25">
                     <div class="valid-feedback">
                       ok
                     </div>
@@ -249,9 +259,9 @@
                     </div>  
                   </div>
 
-                <div class="col-4">
+                <div class="col-12 col-m-6 col-lg-6">
                   <label for="nombre" class="form-label">Nombre</label>
-                  <input type="text" name="nombre" id="nombre" class="form-control" value="" required>
+                  <input type="text" name="nombre" id="nombre" class="form-control" value="" required minlength="1" maxlength="25">
                   <div class="valid-feedback">
                     ok
                   </div>
@@ -259,7 +269,7 @@
                     valor requerido
                   </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-m-6 col-lg-6">
                     <label for="fecha" class="form-label">Fecha de Nacimiento</label>
                     <input type="date" name="fecha" id="fecha" class="form-control" value="" required>
                     <div class="valid-feedback">
@@ -269,9 +279,9 @@
                       valor requerido
                     </div>  
                   </div>
-                <div class="col-4">
+                <div class="col-12 col-m-6 col-lg-6">
                     <label for="numero" class="form-label">Nº de documento</label>
-                    <input type="number" name="numero" id="numero"class="form-control" value="" required>
+                    <input type="number" name="numero" id="numero"class="form-control" value="" required minlength="8" maxlength="12">
                     <div class="valid-feedback">
                       ok
                     </div>
@@ -279,48 +289,7 @@
                       valor requerido
                     </div>  
                   </div>
-                <div class="col-4">
-                    <label for="domicilio" class="form-label">Domicilio</label>
-                    <input type="text" name="domicilio" id="domicilio" class="form-control" value="" required>   
-                    <div class="valid-feedback">
-                      ok
-                    </div>
-                    <div class="invalid-feedback">
-                      valor requerido
-                    </div>  
-                  </div>
-                <div class="col-4">
-                    <label for="telefono" class="form-label">Telefono</label>
-                    <input type="tel" name="telefono" id="telefono" class="form-control" value="" required>   
-                    <div class="valid-feedback">
-                      ok
-                    </div>
-                    <div class="invalid-feedback">
-                      valor requerido
-                    </div>  
-                  </div>
-                <div class="col-6">
-                    <label for="obrasocial" class="form-label">Obra Social</label>
-                    <input type="text" name="obrasocial" class="form-control" id="obrasocial" value="" required>   
-                    <div class="valid-feedback">
-                      ok
-                    </div>
-                    <div class="invalid-feedback">
-                      valor requerido
-                    </div>  
-                  </div>
-                <div class="col-6">
-                    <label for="afiliado" class="form-label">Nùmero de Afiliado</label>
-                    <input type="text" name="afiliado" id="afiliado" class="form-control" value="" required>   
-                    <div class="valid-feedback">
-                      ok
-                    </div>
-                    <div class="invalid-feedback">
-                      valor requerido
-                    </div>
-  
-                  </div>
-                <div class="col-12">
+                <div class="col-12 col-m-6 col-lg-6">
                     <div class="form-check">
                         <input type="checkbox" class="form-check-label" id="checkTerms" value="" required>              
                         <label for="checkTerms" class="form-check-label">Acepto los terminos y condiciones</label>
@@ -332,17 +301,12 @@
                         </div>      
                       </div>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-m-6 col-lg-6">
                     <button type="submit" class="btn btn-primary" >Registrate</button>
                     <button type="reset" class="btn btn-danger">Cancelar</button>
+                    <p class="warnings" id="warnings"></p>
                 </div> 
-                <div class="modal fade popup" id="succesModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered">
-                      <h2>Muchas Gracias!</h2>
-                      <p>Tu cuenta fue registrada, espera a que un administrador la valide</p>
-                      <a href="#" class="btn btn-light">OK</a>
-                  </div>
-                </div>
+
                 <script src="../js/regPaciente.js"></script>
         
             </form>

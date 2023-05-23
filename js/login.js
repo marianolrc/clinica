@@ -1,39 +1,42 @@
-/*
-const form = document.querySelector('form');
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
+// Escuchar el evento submit del formulario
+document.getElementById('form-login').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevenir el envío del formulario
 
-  const username = document.querySelector('#username').value;
-  const password = document.querySelector('#password').value;
-  const role = document.querySelector('#role').value;
+  // Obtener los valores de los campos
+  const usuario = document.getElementById('usuario').value;
+  const contraseña = document.getElementById('contraseña').value;
+  const rol = document.getElementById('rol').value;
 
-  localStorage.setItem('username', username);
-  localStorage.setItem('password', password);
-  localStorage.setItem('role', role);
+  // Obtener usuarios existentes del almacenamiento local
+  const pacientes = JSON.parse(localStorage.getItem('pacientes')) || [];
 
-  // redirigir a la página de inicio
-  window.location.href = '/inicio.html';
+  // Verificar si el usuario existe y la contraseña coincide
+  const existenciaPaciente = pacientes.find(paciente => paciente.usuario === usuario && paciente.contraseña === contraseña && paciente.rol === rol);
+  if (existenciaPaciente) {
+    alert('Inicio de sesión exitoso!');
+    // Realizar la redirección a la página deseada
+
+    // redirigir a la página de Cliente
+    // window.location.href = 'http://127.0.0.1:5500/pages/pagClient.html';
+      window.location.href = 'pagClient.html'
+      // window.location.assign('../pages/pagClient.html');
+
+  } else {
+    alert('Nombre de usuario, contraseña o tipo de usuario incorrectos. Por favor, intenta nuevamente.');
+  }
+
+  // Limpiar los campos del formulario
+  document.getElementById('usuario').value = '';
+  document.getElementById('password').value = '';
+
+
 });
- */
 
 
-const form = document.querySelector('#form-login');
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
 
-  const username = document.querySelector('#loginName').value;
-  const password = document.querySelector('#loginPassword').value;
-  const role = document.querySelector('#role').value;
 
-  localStorage.setItem('loginName', username);
-  localStorage.setItem('loginPassword', password);
-  localStorage.setItem('role', role);
-
-  // redirigir a la página de inicio
-  window.location.href = '../pages/pagCliente.html';
-});
 
 /*
 const role = localStorage.getItem('role');
