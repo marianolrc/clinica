@@ -15,16 +15,25 @@ document.getElementById('form-login').addEventListener('submit', function(event)
   const existenciaPaciente = pacientes.find(paciente => paciente.usuario === usuario && paciente.contraseña === contraseña && paciente.rol === rol);
   if (existenciaPaciente) {
     alert('Inicio de sesión exitoso!');
-    // Realizar la redirección a la página deseada
-
     // redirigir a la página de Cliente
-    // window.location.href = 'http://127.0.0.1:5500/pages/pagClient.html';
-      window.location.href = 'pagClient.html'
+      window.location.href = '../pages/pagClient.html'
       // window.location.assign('../pages/pagClient.html');
+      // Guardar el estado de inicio de sesión en el localStorage
+      localStorage.setItem('isLoggedIn', true);
 
   } else {
     alert('Nombre de usuario, contraseña o tipo de usuario incorrectos. Por favor, intenta nuevamente.');
   }
+
+
+
+//   // Verificar el estado de inicio de sesión almacenado en el localStorage
+//   const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+//   // Si no se ha iniciado sesión, redirigir a la página de inicio de sesión
+//   if (!isLoggedIn) {
+//   window.location.href = 'index.html'; // Reemplaza 'login.html' con la URL de la página de inicio de sesión
+// }
 
   // Limpiar los campos del formulario
   document.getElementById('usuario').value = '';
