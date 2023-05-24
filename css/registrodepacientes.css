@@ -30,8 +30,11 @@ header nav a{
 }
 
 body{
-    background: rgb(238,242,243);
-    background: radial-gradient(circle, rgba(238,242,243,1) 0%, rgba(142,158,171,1) 100%);
+    /* background: rgb(238,242,243);
+    background: radial-gradient(circle, rgba(238,242,243,1) 0%, rgba(142,158,171,1) 100%); */
+    background: url(../assets/img/background-clinica.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .login-mdl{
@@ -90,19 +93,30 @@ body{
 /*formulario registro de pacientes*/
 .container{
    width: 80%;
-   max-width: 1200px;
-   min-width: 600px;
-   margin: 0 auto;
-   display: grid;
-   grid-template-columns: repeat(1, 1fr);
-   grid-gap: 25px;
-   padding: 25px 25px;
-   background-color:rgba(79, 64, 123, 0.3);
+   margin: 2rem auto;
+   background-color:rgba(79, 64, 123, 0.5);
    font-weight: bold;
    border-radius: 0.5em;
    box-shadow: inset 1px 1px 22px 4px;
 
 }
+
+#formRegPacientes{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    padding: 25px 25px;
+    margin: 1rem auto;
+    justify-items: center;
+}
+
+.warnings{
+    text-align: center;
+    margin: auto;
+    padding-top: 1.25rem;
+}
+
+
 
 .imagen{
    width: 150px;
