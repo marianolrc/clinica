@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.removeItem('isLoggedIn');
       
       // Redirigir a la página de inicio de sesión
-      window.location.href = '../index.html'; // Reemplaza 'login.html' con la URL de la página de inicio de sesión
+      window.location.href = '../index.html'; 
     });
   });
   
