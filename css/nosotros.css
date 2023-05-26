@@ -4,28 +4,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-
-.navcolor{
-    background: #2193b0;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
-}
-
-.btn {
-  padding: .45rem 1.5rem .35rem;
-}
-
-header nav a{
     font-family: 'Montserrat';
-    font-weight: 900;
-    
 }
-.navbar-brand{
-    color: #eef2f3;
-    
-}
+
+
 
 body{
     background: rgb(238,242,243);
@@ -33,58 +15,6 @@ body{
 
 }
 
-.login-mdl{
-    background: rgb(238,242,243);
-    background: radial-gradient(circle, rgba(238,242,243,1) 0%, rgba(142,158,171,1) 100%);
-}
-.login-mdl .modal-content{
-    background: rgb(238,242,243);
-    background: radial-gradient(circle, rgba(238,242,243,1) 0%, rgba(142,158,171,1) 100%);
-}
-
-
-.modal-content .boton-log{
-    background: #FEAC5E;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    border: none;
-    border-radius: 2rem;
-    color: black;
-    font-family: 'Montserrat';
-    font-weight: 600;
-    text-shadow: 2px 2px 8px black;
-    padding: 1rem;
-    margin: 0 30%;
-    width: 40%;
-    transition: all 1s;
-}
-.modal-content .boton-log:hover{
-    background: #FEAC5E;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: white;
-   
-}
-.login-sup{
-    color: #E52C23 !important;
-    font-family: 'Montserrat';
-    font-size: 1em;
-    font-weight: 900;
-    background-image: linear-gradient(#E52C23, #E52C23);
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 0% 2px;
-
-    text-shadow: 2px 2px 6px white;
-}
-
-.login-sup:hover{
-    transition: background-size .4s ease-in-out;
-    background-size: 100% 2px;
-    color: #E52C23 !important;
-    border-radius: 5px;
-    text-shadow: 2px 2px 6px white;
-}
 
 /* .heading {
     background-color: red;
