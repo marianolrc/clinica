@@ -27,13 +27,7 @@ document.getElementById('form-login').addEventListener('submit', function(event)
 
 
 
-//   // Verificar el estado de inicio de sesión almacenado en el localStorage
-//   const isLoggedIn = localStorage.getItem('isLoggedIn');
 
-//   // Si no se ha iniciado sesión, redirigir a la página de inicio de sesión
-//   if (!isLoggedIn) {
-//   window.location.href = 'index.html'; // Reemplaza 'login.html' con la URL de la página de inicio de sesión
-// }
 
   // Limpiar los campos del formulario
   document.getElementById('usuario').value = '';
