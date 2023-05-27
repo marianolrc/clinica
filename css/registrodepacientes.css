@@ -7,12 +7,7 @@
 }
 
 
-.navcolor{
-    background: #2193b0;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-}
+
 
 
 .btn {
@@ -24,10 +19,7 @@ header nav a{
     font-weight: 900;
     
 }
-.navbar-brand{
-    color: #eef2f3;
-    
-}
+
 
 body{
     /* background: rgb(238,242,243);
@@ -37,58 +29,7 @@ body{
     background-size: cover;
 }
 
-.login-mdl{
-    background: rgb(238,242,243);
-    background: radial-gradient(circle, rgba(238,242,243,1) 0%, rgba(142,158,171,1) 100%);
-}
-.login-mdl .modal-content{
-    background: rgb(238,242,243);
-    background: radial-gradient(circle, rgba(238,242,243,1) 0%, rgba(142,158,171,1) 100%);
-}
 
-
-.modal-content .boton-log{
-    background: #FEAC5E;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    border: none;
-    border-radius: 2rem;
-    color: black;
-    font-family: 'Montserrat';
-    font-weight: 600;
-    text-shadow: 2px 2px 8px black;
-    padding: 1rem;
-    margin: 0 30%;
-    width: 40%;
-    transition: all 1s;
-}
-.modal-content .boton-log:hover{
-    background: #FEAC5E;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: white;
-   
-}
-.login-sup{
-    color: #E52C23 !important;
-    font-family: 'Montserrat';
-    font-size: 1em;
-    font-weight: 900;
-    background-image: linear-gradient(#E52C23, #E52C23);
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 0% 2px;
-
-    text-shadow: 2px 2px 6px white;
-}
-
-.login-sup:hover{
-    transition: background-size .4s ease-in-out;
-    background-size: 100% 2px;
-    color: #E52C23 !important;
-    border-radius: 5px;
-    text-shadow: 2px 2px 6px white;
-}
 
 /*formulario registro de pacientes*/
 .container{
@@ -101,20 +42,178 @@ body{
 
 }
 
-#formRegPacientes{
+/* #formRegPacientes{
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 20px;
     padding: 25px 25px;
     margin: 1rem auto;
     justify-items: center;
+} */
+
+/* Inicio Formulario */
+.formulario{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding-left: 2rem;
+} 
+
+.formulario__label{
+    display: block;
+    font-weight: 800;
+    font-size: 21px;
+    padding: 10px;
+    cursor: pointer;
 }
 
-.warnings{
-    text-align: center;
-    margin: auto;
-    padding-top: 1.25rem;
+.formulario__grupo-input {
+    position: relative;
 }
+
+.formulario__input {
+    width: 90%;
+    background: white;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3 ease all;
+}
+
+.formulario__input:focus {
+    border: 3px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formulario__input-error{
+    font-size: 16px;
+    font-weight: 800;
+    color: rgb(237, 73, 73);
+    margin-bottom: 0;
+    margin-top: 8px;
+    display: none; 
+ 
+}
+
+.formulario__input-error-activo{
+    display: block;
+}
+
+.formulario__validacion-estado {
+    position: absolute;
+    right: 11%;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 20px;
+    opacity: 0;  
+}
+
+.formulario__checkbox {
+    margin-right: 10px;
+}
+
+.formulario__grupo-terminos,
+.formulario__mensaje,
+.formulario__grupo-btn-enviar{
+    grid-column: span 2;
+}
+
+
+.formulario__mensaje{
+    height: 45px;
+    line-height:45px;
+    background-color: #f66060;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}
+.formulario__mensaje2{
+    height: 45px;
+    line-height:45px;
+    background-color: #f66060;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}
+
+.formulario__mensaje-activo{
+    display: block;
+}
+
+.formulario__mensaje p{
+    margin: 0;
+    
+}
+
+.formulario__grupo-btn-enviar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario__btn {
+   height: 45px;
+   font-size: 20px;
+   line-height: 45px; 
+   width: 130px;
+   background: rgb(51, 86, 228);
+   color: white;
+   font-weight: bold;
+   border-radius: 10px;
+   cursor: pointer;
+   transition: .1s ease all;
+}
+
+.formulario__btn:hover{
+    box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+
+}
+
+.formulario__mensaje-exito{
+    font-size: 14px;
+    color: green;
+    display: none;
+}
+
+.formulario__mensaje-exito-activo{
+    display: block;
+}
+
+/* estilos para validacion */
+
+.formulario__grupo-correcto .formulario__validacion-estado{
+    color: #1ed12d;
+    opacity: 1;
+
+}
+
+.formulario__grupo-incorrecto .formulario__label{
+    color: #bb2929;
+}
+.formulario__grupo-incorrecto .formulario__validacion-estado{
+    color: #bb2929;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input{
+    border: 3px solid #bb2929;
+}
+
+
+@media screen and (max-width: 800px){
+    .formulario{
+       grid-template-columns:1fr;
+    }
+    .formulario__grupo-terminos,
+    .formulario__mensaje,
+    .formulario__grupo-btn-enviar{
+    grid-column: 1;
+}
+}
+
 
 
 

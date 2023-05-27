@@ -12,7 +12,7 @@ document.getElementById('form-login').addEventListener('submit', function(event)
   const pacientes = JSON.parse(localStorage.getItem('pacientes')) || [];
 
   // Verificar si el usuario existe y la contraseña coincide
-  const existenciaPaciente = pacientes.find(paciente => paciente.usuario === usuario && paciente.contraseña === contraseña && paciente.rol === rol);
+  const existenciaPaciente = pacientes.find(paciente => paciente.usuario === usuario && paciente.password === contraseña && paciente.rol === rol);
   if (existenciaPaciente) {
     alert('Inicio de sesión exitoso!');
     // redirigir a la página de Cliente
@@ -28,10 +28,7 @@ document.getElementById('form-login').addEventListener('submit', function(event)
 
 
 
-
-  // Limpiar los campos del formulario
-  document.getElementById('usuario').value = '';
-  document.getElementById('password').value = '';
+  document.getElementById('form-login').reset();
 
 
 });
