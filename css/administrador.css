@@ -1,0 +1,21 @@
+body {
+    background-image: url(../assets/Administrador/admi1.jpg);
+    position: relative;
+    background-repeat: no-repeat;
+    z-index: 1;
+    background-color: rgb(209, 208, 207);
+}
+
+
+.update{
+    display: none;
+    
+}
+
+
+
+
+footer{
+    margin-bottom: 0;
+    margin-top: 35%;
+}

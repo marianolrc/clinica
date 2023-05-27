@@ -1,7 +1,6 @@
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 
-
 const expresiones = {
 	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
@@ -38,8 +37,6 @@ const validarFormulario = (e)=>{
         case "password2":
             validarPassword2();
         break;
-       
-       
     }
 
 }
@@ -92,20 +89,40 @@ formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const terminos = document.getElementById('terminos');
-
-    if(campos.usuario && campos.nombre && campos.apellido && campos.correo && campos.password && terminos.checked){
+    if (campos.usuario && campos.nombre && campos.apellido && campos.correo && campos.password && terminos.checked) {
         formulario.reset();
 
-       document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
         setTimeout(() => {
             document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-        }, 4000); 
+        }, 4000);
 
         document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
             icono.classList.remove('formulario__grupo-correcto');
-        })
-    } else{
+ 
+        });
+
+          // Crea un objeto con los datos del prestador
+          const prestador = {
+            usuario: document.getElementById("usuario").value,
+            nombre: document.getElementById('nombre').value,
+            apellido: document.getElementById('apellido').value,
+            correo: document.getElementById('correo').value,
+            password: document.getElementById('password').value,
+            password2: document.getElementById('password2').value
+            
+          };
+        // Verificar si el usuario ya existe
+        const prestadorExistente = JSON.parse(localStorage.getItem('prestador')) || [];
+        const usuarioExistente = prestadorExistente.find(prestador => prestador.usuario === prestador.usuario);
+        if (usuarioExistente) {
+            alert('El usuario ya existe. Por favor, elige otro nombre de usuario.');
+        } else {
+            prestadorExistente.push(prestador);
+            localStorage.setItem('prestador', JSON.stringify(prestador));
+            alert('El administrador controlará la información.');
+        }
+    } else {
         document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
     }
-  
 });
