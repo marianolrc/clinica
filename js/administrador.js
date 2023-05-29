@@ -146,7 +146,7 @@ function updateData(index){
             document.getElementById("correo").value = "";
             document.getElementById("tipoDeUsuario").value = "";
 
-             //boton de editar se ocultara y el boton de agregar se mostrara
+    //boton de editar se ocultara y el boton de agregar se mostrara
     document.getElementById("Submit").style.display = "block"; 
     document.getElementById("Update").style.display = "none";
 
