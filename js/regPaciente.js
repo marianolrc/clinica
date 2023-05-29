@@ -8,7 +8,7 @@ const campoNombre = document.getElementById('nombre');
 const campoFecNacimiento = document.getElementById('fecha');
 const campoDni = document.getElementById('numero');
 const terminosCond = document.getElementById('checkTerms');
-const parrafo = document.getElementById('warnings')
+const parrafo = document.getElementById('warnings');
 
 
 
