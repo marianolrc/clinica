@@ -151,7 +151,6 @@ function updateData(index){
     document.getElementById("Update").style.display = "none";
 
         }
-
     }
 }
 

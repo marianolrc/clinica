@@ -11,6 +11,8 @@ document.getElementById('form-login').addEventListener('submit', function(event)
   // Obtener usuarios existentes del almacenamiento local
   const pacientes = JSON.parse(localStorage.getItem('pacientes')) || [];
 
+  const prestadores = JSON.parse(localStorage.getItem('prestadores')) || [];
+
   // Verificar si el usuario existe y la contraseña coincide
   const existenciaPaciente = pacientes.find(paciente => paciente.usuario === usuario && paciente.contraseña === contraseña && paciente.rol === rol);
   if (existenciaPaciente) {
@@ -26,27 +28,24 @@ document.getElementById('form-login').addEventListener('submit', function(event)
   }
 
 
+  const existenciaPrestador = prestadores.find(prestadores => prestadores.usuario === usuario && prestadores.password === password && prestadores.rol ===rol);
+  if(existenciaPrestador){
+  alert('Inicio de sesion exitoso!');
+  //redirigi a la pagina de prestadores
+  window.location.href = '../pages/pagProfes.html'
+  // window.location.assign('../pages/pagPrestadores.html');
+  // guardar el estado de inicio de sesion en el localStorage
+  localStorage.setItem('isLoggedIn',true);
 
+  }else{
+  alert('Nombre de usuario, contraseña o tipo de usuario son incorrectos. Por favor, intente nuevamente.'); 
+  }
 
 
   // Limpiar los campos del formulario
   document.getElementById('usuario').value = '';
   document.getElementById('password').value = '';
-
-
 });
 
 
 
-
-
-
-/*
-const role = localStorage.getItem('role');
-
-if (role === 'admin') {
-  // mostrar opciones de administrador
-} else {
-  // mostrar opciones de usuario normal
-}
- */
