@@ -180,8 +180,22 @@ selects.forEach((select) => {
     input.addEventListener('blur', validarFormulario);
   });
 
+
+  
+  // Obtiene los pacientes existentes del localstorage o crea un nuevo array vacío
+  let turnos = JSON.parse(localStorage.getItem('turnos')) || [];
+  
+
+
+
   formulario.addEventListener('submit', (e) => {
     e.preventDefault();
+    const fecha = fechaTurno.value;
+    const obrasocial = obraSocial.value;
+    const motivoConsulta = motivo.value;
+    const especialidadProf = especialidad.value;
+    const profesionalElegido = profesional.value;
+    const turnoElegido = horaTurno.value;
 
     console.log(campos.fechaTurno);
     console.log(campos.obrasocial);
@@ -189,7 +203,10 @@ selects.forEach((select) => {
     console.log(campos.especialidad);
     console.log(campos.profesional);
     console.log(campos.horaTurno);
-  
+
+     // Verificar si el turno ya existe
+     const turnoExistente = turnos.find(turno => turno.fechaTurno === fechaTurno && turno.horaTurno === horaTurno);
+
     if (
       campos.fechaTurno &&
       campos.obrasocial &&
@@ -199,15 +216,34 @@ selects.forEach((select) => {
       campos.horaTurno
     ) {
       formulario.reset();
-  
-      document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-      setTimeout(() => {
-        document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-      }, 4000);
+      if(!turnoExistente){
+        const turno = {
+          fechaTurno: fecha,
+          obrasocial: obrasocial,
+          motivo: motivoConsulta,
+          especialidad: especialidadProf,
+          profesional: profesionalElegido,
+          turno: turnoElegido
 
-      document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
-        icono.classList.remove('formulario__grupo-correcto');
-      });
+        }
+
+
+        turnos.push(turno);
+
+        // Guardar la lista de pacientes actualizada en el almacenamiento local
+        localStorage.setItem('turnos', JSON.stringify(turnos));
+
+        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+        setTimeout(() => {
+          document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+        }, 4000);
+  
+        document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+          icono.classList.remove('formulario__grupo-correcto');
+        });
+      }else{
+          document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+      }
     } else {
       document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
     }
