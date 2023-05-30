@@ -36,6 +36,7 @@ document.getElementById('form-login').addEventListener('submit', function(event)
     alert('Nombre de usuario, contraseña o tipo de usuario incorrectos. Por favor, intenta nuevamente.');
   }
 
+
   document.getElementById('form-login').reset();
 });
 
