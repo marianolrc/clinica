@@ -1,4 +1,3 @@
-
 // Escuchar el evento submit del formulario
 document.getElementById('form-login').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevenir el envío del formulario
@@ -14,38 +13,53 @@ document.getElementById('form-login').addEventListener('submit', function(event)
   const prestadores = JSON.parse(localStorage.getItem('prestadores')) || [];
 
   // Verificar si el usuario existe y la contraseña coincide
-  const existenciaPaciente = pacientes.find(paciente => paciente.usuario === usuario && paciente.contraseña === contraseña && paciente.rol === rol);
+  const existenciaPaciente = pacientes.find(paciente => paciente.usuario === usuario && paciente.password === contraseña && paciente.rol === rol);
   if (existenciaPaciente) {
+    // Crear un objeto del usuario logueado con todos los datos del paciente
+    const usuarioLogueado = {
+      usuario: existenciaPaciente.usuario,
+      correo: existenciaPaciente.correo,
+      password: existenciaPaciente.password,
+      password2: existenciaPaciente.password2,
+      apellido: existenciaPaciente.apellido,
+      nombre: existenciaPaciente.nombre,
+      fecNacimiento: existenciaPaciente.fecNacimiento,
+      dni: existenciaPaciente.dni,
+      rol: existenciaPaciente.rol
+    };
+  
     alert('Inicio de sesión exitoso!');
-    // redirigir a la página de Cliente
-      window.location.href = '../pages/pagClient.html'
-      // window.location.assign('../pages/pagClient.html');
-      // Guardar el estado de inicio de sesión en el localStorage
-      localStorage.setItem('isLoggedIn', true);
-
+  
+    window.location.href = '../pages/pagClient.html';
+  
+    localStorage.setItem('isLoggedIn', true);
+    localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioLogueado));
   } else {
     alert('Nombre de usuario, contraseña o tipo de usuario incorrectos. Por favor, intenta nuevamente.');
   }
 
+    const existenciaPrestadores = prestadores.find(prestador => prestador.usuario === usuario && prestador.password === password && prestador.rol === rol);
+    if(existenciaPrestadores){
+      const prestadorLogueado = {
+        usuario: existenciaPrestadores.usuario,
+        nombre: existenciaPrestadores.nombre,
+        apellido: existenciaPrestadores.apellido,
+        correo: existenciaPrestadores.correo,
+        password: existenciaPrestadores.password,
+        password2: existenciaPrestadores.password2,
+        rol: existenciaPrestadores.rol,
 
-  const existenciaPrestador = prestadores.find(prestadores => prestadores.usuario === usuario && prestadores.password === password && prestadores.rol ===rol);
-  if(existenciaPrestador){
-  alert('Inicio de sesion exitoso!');
-  //redirigi a la pagina de prestadores
-  window.location.href = '../pages/pagProfes.html'
-  // window.location.assign('../pages/pagPrestadores.html');
-  // guardar el estado de inicio de sesion en el localStorage
-  localStorage.setItem('isLoggedIn',true);
+      };
+      alert('Inicio de sesion exitoso!');
 
-  }else{
-  alert('Nombre de usuario, contraseña o tipo de usuario son incorrectos. Por favor, intente nuevamente.'); 
-  }
+      window.location.href = '../pages/pagProfes.html';
+
+      localStorage.setItem('isLoggedIn, true');
+      localStorage.setItem('prestadorLogueado', JSON.stringify(prestadorLogueado));
+    }
 
 
-  // Limpiar los campos del formulario
-  document.getElementById('usuario').value = '';
-  document.getElementById('password').value = '';
+  document.getElementById('form-login').reset();
 });
-
 
 
