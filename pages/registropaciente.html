@@ -114,8 +114,9 @@
               <label class="texto-ingcomo" for="rol">Ingresar como:</label>
               <div class="form-check roles" id="roles">
                 <select name="rol" id="rol">
-                  <option value="profesional">Profesional</option>
+                  <option value="prestador">Prestador</option>
                   <option value="paciente">Paciente</option>
+                  <option value="admin">Admin</option>
                 </select>
               </div>
 
@@ -123,7 +124,7 @@
 
             <!-- <p class="text-center">O:</p> -->
 
-            <!-- Email input -->
+            <!-- User input -->
             <div class="form-outline mb-4">
               <input  type="text" name="usuario" id="usuario" class="form-control" value="" required minlength="6" maxlength="18">
               <label class="form-label" for="loginName" style="margin-left: 0px;">Usuario</label>
@@ -135,23 +136,10 @@
               <label class="form-label" for="loginPassword" style="margin-left: 0px;">Contraseña</label>
             <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64.8px;"></div><div class="form-notch-trailing"></div></div></div>
 
-            <!-- 2 column grid layout for inline styling -->
-            <div class="row mb-4">
-              <div class="col d-flex justify-content-center">
-
-                <div class="col-12 col-sm-8 col-lg-4">
-                <!-- Simple link -->
-                <a href="#!">Olvidaste tu contraseña?</a>
-              </div>
-            </div>
-
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary boton-log">Ingresar</button>
 
-            <!-- Register buttons -->
-            <div class="text-center">
-              <p class="mb-1">No estas registrado? <a href="#!">Registrarse</a></p>
-            </div>
+
           </form>
         </div>
       </div>
