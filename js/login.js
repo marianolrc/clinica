@@ -55,8 +55,6 @@ document.getElementById('form-login').addEventListener('submit', function(event)
   
     localStorage.setItem('isLoggedIn', true);
     localStorage.setItem('prestadorLogueado', JSON.stringify(prestadorLogueado));
-  } else {
-    alert('Nombre de usuario, contraseña o tipo de usuario incorrectos. Por favor, intenta nuevamente.');
   }
 
   const existenciaPrestadores = prestadores.find(prestador => prestador.usuario === usuario && prestador.password === password && prestador.rol === rol);
@@ -76,13 +74,10 @@ document.getElementById('form-login').addEventListener('submit', function(event)
 
       localStorage.setItem('isLoggedIn', true);
       localStorage.setItem('prestadorLogueado', JSON.stringify(prestadorLogueado));
-    }else{
-      alert('Nombre de usuario, contraseña o tipo de usuario incorrecto. Por favor, intente nuevamente.');
     }
 
-
   const admin = {
-    usuario: 'admin',
+    usuario: 'admin1',
     contraseña: 'admin123',
     rol: 'admin'
   }
@@ -100,11 +95,14 @@ if (usuario === admin.usuario && contraseña === admin.contraseña && rol === ad
   alert('Inicio de sesión exitoso como administrador!');
 
   // Redirigir a la página de administrador
-  window.location.href = '../pages/pagAdmin.html';
+  window.location.href = '../pages/administrador.html';
 
   localStorage.setItem('isLoggedIn', true);
   localStorage.setItem('adminLogueado', JSON.stringify(adminLogueado));
+}else{
+  alert('Nombre de usuario, contraseña o tipo de usuario incorrecto. Por favor, intente nuevamente.');
 }
+
 
 
   document.getElementById('form-login').reset();
