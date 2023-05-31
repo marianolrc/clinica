@@ -75,45 +75,7 @@ selects.forEach((select) => {
   }
 
 
-  const validarFechaNacimiento = () => {
-    const inputFechaNacimiento = document.getElementById('fechanacimiento');
-    const fechaNacimiento = new Date(inputFechaNacimiento.value);
-    const fechaActual = new Date();
-    const edadMinima = 16;
-  
-    if (
-      expresiones.fechanacimiento.test(inputFechaNacimiento.value) &&
-      fechaNacimiento <= fechaActual &&
-      calcularEdad(fechaNacimiento) >= edadMinima
-    ) {
-      document.getElementById('grupo__fecha-nacimiento').classList.remove('formulario__grupo-incorrecto');
-      document.getElementById('grupo__fecha-nacimiento').classList.add('formulario__grupo-correcto');
-      document.querySelector('#grupo__fecha-nacimiento i').classList.add('fa-check-circle');
-      document.querySelector('#grupo__fecha-nacimiento i').classList.remove('fa-times-circle');
-      document.querySelector('#grupo__fecha-nacimiento .formulario__input-error').classList.remove('formulario__input-error-activo');
-      campos.fechanacimiento = true;
-    } else {
-      document.getElementById('grupo__fecha-nacimiento').classList.add('formulario__grupo-incorrecto');
-      document.getElementById('grupo__fecha-nacimiento').classList.remove('formulario__grupo-correcto');
-      document.querySelector('#grupo__fecha-nacimiento i').classList.add('fa-times-circle');
-      document.querySelector('#grupo__fecha-nacimiento i').classList.remove('fa-check-circle');
-      document.querySelector('#grupo__fecha-nacimiento .formulario__input-error').classList.add('formulario__input-error-activo');
-      campos.fechanacimiento = false;
-  
-    }
-  }
-  
-  const calcularEdad = (fechaNacimiento) => {
-    const diff = Date.now() - fechaNacimiento.getTime();
-    const ageDate = new Date(diff);
-    return Math.abs(ageDate.getUTCFullYear() - 1970);
-  }
-  
-  // Agregar evento a input de fecha de nacimiento
-  const inputFechaNacimiento = document.getElementById('fechanacimiento');
-  inputFechaNacimiento.addEventListener('keyup', validarFechaNacimiento);
-  inputFechaNacimiento.addEventListener('blur', validarFechaNacimiento);
-  
+
 
 
 /* selectElement.addEventListener('change', validarSelect);
