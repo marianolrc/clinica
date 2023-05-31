@@ -188,7 +188,7 @@ selects.forEach((select) => {
 
 
 
-  formulario.addEventListener('submit', (e) => {
+  formulario.addEventListener('click', (e) => {
     e.preventDefault();
     const fecha = fechaTurno.value;
     const obrasocial = obraSocial.value;
@@ -248,5 +248,103 @@ selects.forEach((select) => {
       document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
     }
   });
+
+
+
+// Paso 1: Obtén la referencia al botón "Actualizar"
+const btnActualizar = document.querySelector('#btnAct');
+
+// Paso 2: Agrega un evento click al botón "Actualizar"
+btnActualizar.addEventListener('submit', actualizarTabla);
+
+// Paso 3: Crea la función `actualizarTabla`
+function actualizarTabla(event) {
+  event.preventDefault();
+
+  // Obtén los datos actualizados del formulario
+  const fecha = fechaTurno.value;
+  const obrasocial = obraSocial.value;
+  const motivoConsulta = motivo.value;
+  const especialidadProf = especialidad.value;
+  const profesionalElegido = profesional.value;
+  const turnoElegido = horaTurno.value;
+
+  // Obtén los turnos del localStorage
+  let turnos = JSON.parse(localStorage.getItem('turnos')) || [];
+
+  // Encuentra el turno a actualizar en la lista de turnos
+  const turnoActualizado = turnos.find(turno => turno.fechaTurno === fecha && turno.turno === turnoElegido);
+
+  if (turnoActualizado) {
+    // Actualiza los datos del turno
+    turnoActualizado.obrasocial = obrasocial;
+    turnoActualizado.motivo = motivoConsulta;
+    turnoActualizado.especialidad = especialidadProf;
+    turnoActualizado.profesional = profesionalElegido;
+
+    // Actualiza los datos en el localStorage
+    localStorage.setItem('turnos', JSON.stringify(turnos));
+
+    // Llama a una función para actualizar la tabla en el DOM
+    actualizarTablaDOM();
+
+    // Muestra un mensaje de éxito
+    mostrarMensajeExito('Tabla actualizada correctamente.');
+  } else {
+    // Muestra un mensaje de error si no se encuentra el turno a actualizar
+    mostrarMensajeError('No se encontró el turno a actualizar.');
+  }
+}
+
+
+
+// Paso 4: Crea la función `actualizarTablaDOM`
+function actualizarTablaDOM() {
+  // Obtén la referencia a la tabla en el DOM
+  const tabla = document.getElementById('tablaTurnos');
+
+  // Obtén los turnos del localStorage
+  let turnos = JSON.parse(localStorage.getItem('turnos')) || [];
+
+  // Vacía la tabla
+  tabla.innerHTML = '';
+
+  // Recorre la lista de turnos y crea las filas de la tabla con los datos actualizados
+  turnos.forEach((turno) => {
+    const fila = document.createElement('tr');
+    fila.innerHTML = `
+      <td>${turno.fechaTurno}</td>
+      <td>${turno.obrasocial}</td>
+      <td>${turno.motivo}</td>
+      <td>${turno.especialidad}</td>
+      <td>${turno.profesional}</td>
+      <td>${turno.turno}</td>
+    `;
+    tabla.appendChild(fila);
+  });
+}
+
+// Paso 5: Crea las funciones `mostrarMensajeExito` y `mostrarMensajeError`
+function mostrarMensajeExito(mensaje) {
+  const mensajeExito = document.getElementById('formulario__mensaje-exito');
+  mensajeExito.textContent = mensaje;
+  mensajeExito.classList.add('formulario__mensaje-exito-activo');
+  setTimeout(() => {
+    mensajeExito.classList.remove('formulario__mensaje-exito-activo');
+  }, 3000);
+}
+
+function mostrarMensajeError(mensaje) {
+  const mensajeError = document.getElementById('formulario__mensaje');
+  mensajeError.textContent = mensaje;
+  mensajeError.classList.add('formulario__mensaje-error-activo');
+  setTimeout(() => {
+    mensajeError.classList.remove('formulario__mensaje-error-activo');
+  }, 3000);
+}
+
+  
+
+
 
 });
