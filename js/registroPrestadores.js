@@ -164,5 +164,3 @@ formulario.addEventListener('submit', (e) => {
   });
 
 });  
-
-
