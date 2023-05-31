@@ -3,30 +3,25 @@ const inputs = document.querySelectorAll('#formDatosPersProf input');
 const inputDni = document.getElementById('dni');
 const inputProfesion = document.getElementById('profesion');
 const inputMatricula = document.getElementById('matricula');  
-const inputDomicilio = document.getElementById('domicilio');  
-const inputFecNacimiento = document.getElementById('nacimiento');  
+const selectEspecialidad = document.getElementById('especialidad');  
+const dateFecNacimiento = document.getElementById('nacimiento');  
 const selects = document.querySelectorAll('#formDatosPersProf select');
-const terminos = document.getElementById('terminos');
+
 
 
 const expresiones = {
-	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
     dni: /^\d{8,8}$/, // 8 numeros.
     profesion: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
     matricula: /^\d{4,6}$/, // 4 a 6 numeros.
-    domicilio: /^[a-zA-ZÀ-ÿ\s\_\-]{1,40}$/, // Letras y espacios, guion y guion_bajo, pueden llevar acentos.
-    codPostal: /^[a-zA-Z0-9]{4,8}$/, // Letras, numeros
-	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+    nacimiento: /^\d{4}-\d{2}-\d{2}$/, // Formato YYYY-MM-DD
 }
 
 const campos = {
     dni: false,
     profesion: false,
     matricula: false,
-    domicilio: false,
-    fechanacimiento: false,
-    select: false,
+    nacimiento: false,
+    especialidad: false,
 }
 
 const validarFormulario = (e)=>{
@@ -40,64 +35,35 @@ const validarFormulario = (e)=>{
         case "matricula":
             validarCampo(expresiones.matricula, e.target, 'matricula');
         break;
-        case 'terminos':
-            validarTerminos();
+        case 'especialidad':
+          validarSelect(e.target, 'especialidad');
         break;
-        case 'select':
-        validarSelect();
-        break;
-
-        case "fechanacimiento":
+        case "nacimiento":
             validarFechaNacimiento();
             break;
      
     }
 }
-selects.forEach((select) => {
-    select.addEventListener('change', (e) => {
-      validarSelect(e.target, select.id);
-    });
-  });
 
-  function validarSelect(e) {
-    const select = e.target;
-    const campo = select.id;
-  
+// Agrega el evento 'change' a los select
+selects.forEach((select) => {
+  select.addEventListener('change', (e) => {
+    validarSelect(e.target, select.id);
+  });
+});
+  const validarSelect = (select, campo) => {
     if (select.value !== '') {
-      document.getElementById(`grupo_${campo}`).classList.remove('formulario_grupo-incorrecto');
-      document.getElementById(`grupo_${campo}`).classList.add('formulario_grupo-correcto');
+      document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+      document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
       campos[campo] = true;
     } else {
-      document.getElementById(`grupo_${campo}`).classList.add('formulario_grupo-incorrecto');
-      document.getElementById(`grupo_${campo}`).classList.remove('formulario_grupo-correcto');
+      document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+      document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
       campos[campo] = false;
     }
-  }
+  };
 
 
-
-
-
-/* selectElement.addEventListener('change', validarSelect);
-function validarSelect() {
-  if (selectElement.value !== '') {
-    document.getElementById(`grupo_${selectElement.id}`).classList.remove('formulario_grupo-incorrecto');
-    document.getElementById(`grupo_${selectElement.id}`).classList.add('formulario_grupo-correcto');
-    campos.select = true;
-  } else {
-    document.getElementById(`grupo_${selectElement.id}`).classList.add('formulario_grupo-incorrecto');
-    document.getElementById(`grupo_${selectElement.id}`).classList.remove('formulario_grupo-correcto');
-    campos.select = false;
-  }
-} */
-
-  // Agrega el evento 'change' a los select
-/* selects.forEach((select) => {
-    select.addEventListener('change', (e) => {
-      validarSelect(e.target, select.id);
-    });
-  });  */
- 
 
 const validarCampo = (expresion, input, campo) =>{
     if(expresion.test(input.value)){
@@ -117,34 +83,59 @@ const validarCampo = (expresion, input, campo) =>{
     }
 };
 
-const validarTerminos = () => {
-    if (terminos.checked) {
-      document.getElementById('grupo__terminos').classList.remove('formulario__grupo-incorrecto');
-      document.getElementById('grupo__terminos').classList.add('formulario__grupo-correcto');
-      document.querySelector('#grupo__terminos .formulario__input-error').classList.remove('formulario__input-error-activo');
-      campos.terminos = true;
-    } else {
-      document.getElementById('grupo__terminos').classList.add('formulario__grupo-incorrecto');
-      document.getElementById('grupo__terminos').classList.remove('formulario__grupo-correcto');
-      document.querySelector('#grupo__terminos .formulario__input-error').classList.add('formulario__input-error-activo');
-      campos.terminos = false;
-    }
-  };
 
 
 inputs.forEach((input) =>{
     input.addEventListener('keyup', validarFormulario );
     input.addEventListener('blur', validarFormulario );
-})
+});
+
+  
+const validarFechaNacimiento = () => {
+  const dateFecNacimiento = document.getElementById('nacimiento');
+  const fechaNacimiento = new Date(dateFecNacimiento.value);
+  const fechaActual = new Date();
+  const edadMinima = 18;
+
+  if (
+    expresiones.nacimiento.test(dateFecNacimiento.value) &&
+    fechaNacimiento <= fechaActual &&
+    calcularEdad(fechaNacimiento) >= edadMinima
+  ) {
+    document.getElementById('grupo__nacimiento').classList.remove('formulario__grupo-incorrecto');
+    document.getElementById('grupo__nacimiento').classList.add('formulario__grupo-correcto');
+    document.querySelector('#grupo__nacimiento i').classList.add('fa-check-circle');
+    document.querySelector('#grupo__nacimiento i').classList.remove('fa-times-circle');
+    document.querySelector('#grupo__nacimiento .formulario__input-error').classList.remove('formulario__input-error-activo');
+    campos.nacimiento = true;
+  } else {
+    document.getElementById('grupo__nacimiento').classList.add('formulario__grupo-incorrecto');
+    document.getElementById('grupo__nacimiento').classList.remove('formulario__grupo-correcto');
+    document.querySelector('#grupo__nacimiento i').classList.add('fa-times-circle');
+    document.querySelector('#grupo__nacimiento i').classList.remove('fa-check-circle');
+    document.querySelector('#grupo__nacimiento .formulario__input-error').classList.add('formulario__input-error-activo');
+    campos.nacimiento = false;
+
+  }
+}
+
+const calcularEdad = (nacimiento) => {
+  const diff = Date.now() - nacimiento.getTime();
+  const ageDate = new Date(diff);
+  return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+
+// Agregar evento a input de fecha de nacimiento
+dateFecNacimiento.addEventListener('keyup', validarFechaNacimiento);
+dateFecNacimiento.addEventListener('blur', validarFechaNacimiento);
+
 
 formDatosPersProf.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const terminos = document.getElementById('terminos');
-
   
-    if(campos.nombre && campos.apellido && campos.dni && campos.correo && campos.password && terminos.checked){
-        formulario.reset();
+    if(campos.dni && campos.profesion && campos.matricula && campos.nacimiento && campos.especialidad){
+      formDatosPersProf.reset();
 
        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
         setTimeout(() => {

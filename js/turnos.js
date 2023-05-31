@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     obrasocial: false,
     motivo: false,
     especialidad: false,
+    especialidad: false,
     profesional: false,
     horaTurno: false,
   };
