@@ -60,26 +60,31 @@ document.getElementById('form-login').addEventListener('submit', function(event)
     alert('Nombre de usuario, contraseña o tipo de usuario incorrectos. Por favor, intenta nuevamente.');
   }
 
-//   const adminUsuario = 'admin';
-// const adminContraseña = 'admin123';
 
-// // Verificar si el usuario y la contraseña coinciden con el usuario admin
-// if (usuario === adminUsuario && contraseña === adminContraseña && rol === 'admin') {
-//   // Crear un objeto del usuario admin con los datos correspondientes
-//   const adminLogueado = {
-//     usuario: adminUsuario,
-//     contraseña: adminContraseña,
-//     rol: 'admin'
-//   };
+  const admin = {
+    usuario: 'admin',
+    contraseña: 'admin123',
+    rol: 'admin'
+  }
 
-//   alert('Inicio de sesión exitoso como administrador!');
 
-//   // Redirigir a la página de administrador
-//   window.location.href = '../pages/pagAdmin.html';
+// Verificar si el usuario y la contraseña coinciden con el usuario admin
+if (usuario === admin.usuario && contraseña === admin.contraseña && rol === admin.rol) {
+  // Crear un objeto del usuario admin con los datos correspondientes
+  const adminLogueado = {
+    usuario: admin.usuario,
+    contraseña: admin.contraseña,
+    rol: admin.rol
+  };
 
-//   localStorage.setItem('isLoggedIn', true);
-//   localStorage.setItem('adminLogueado', JSON.stringify(adminLogueado));
-// }
+  alert('Inicio de sesión exitoso como administrador!');
+
+  // Redirigir a la página de administrador
+  window.location.href = '../pages/pagAdmin.html';
+
+  localStorage.setItem('isLoggedIn', true);
+  localStorage.setItem('adminLogueado', JSON.stringify(adminLogueado));
+}
 
 
   document.getElementById('form-login').reset();
