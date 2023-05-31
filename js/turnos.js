@@ -250,4 +250,40 @@ selects.forEach((select) => {
     }
   });
 
+  const btnActualizar = document.getElementById('btnAct');
+
+  btnActualizar.addEventListener('click', () => {
+    const fechaTurno = document.getElementById('input-fecha').value;
+    const obraSocial = document.getElementById('obrasocial').value;
+    const motivoConsulta = document.getElementById('motivo').value;
+    const especialidad = document.getElementById('especialidad').value;
+    const profesional = document.getElementById('profesional').value;
+    const horaTurno = document.getElementById('horaTurno').value;
+
+    // Realizar la lógica para actualizar el turno con los nuevos valores
+
+    // Ejemplo de cómo se puede guardar en el local storage
+    const turnoActualizado = {
+      fechaTurno: fechaTurno,
+      obrasocial: obraSocial,
+      motivo: motivoConsulta,
+      especialidad: especialidad,
+      profesional: profesional,
+      turno: horaTurno
+    };
+
+    const turnos = JSON.parse(localStorage.getItem('turnos')) || [];
+    const turnoIndex = turnos.findIndex(turno => turno.fechaTurno === fechaTurno);
+
+    if (turnoIndex !== -1) {
+      turnos[turnoIndex] = turnoActualizado;
+    }
+
+    localStorage.setItem('turnos', JSON.stringify(turnos));
+
+    // Realizar alguna acción adicional, como mostrar un mensaje de éxito
+    const mensajeExito = document.getElementById('formulario__mensaje-exito');
+    mensajeExito.style.display = 'block';
+  });
+
 });
