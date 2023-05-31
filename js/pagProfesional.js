@@ -129,22 +129,52 @@ const calcularEdad = (nacimiento) => {
 dateFecNacimiento.addEventListener('keyup', validarFechaNacimiento);
 dateFecNacimiento.addEventListener('blur', validarFechaNacimiento);
 
+// Obtiene los prestadores existentes del localstorage o crea un nuevo array vacío
+let prestadorLogueado = JSON.parse(localStorage.getItem('prestadorLogueado')) || [];
+let datosPrestador = JSON.parse(localStorage.getItem('datosPrestador')) || [];
+
 
 formDatosPersProf.addEventListener('submit', (e) => {
     e.preventDefault();
 
-  
+  const DNI = inputDni.value;
+  const profesionElegida = inputProfesion.value;
+  const numeroMatricula = inputMatricula.value;
+  const fecNacimiento = dateFecNacimiento.value;
+  const especialidadElegida = selectEspecialidad.value;
+
+  const datosExistentes = datosPrestador.find(dato => dato.numeroMatricula === numeroMatricula);
     if(campos.dni && campos.profesion && campos.matricula && campos.nacimiento && campos.especialidad){
       formDatosPersProf.reset();
-
-       document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-        setTimeout(() => {
-            document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-        }, 4000); 
-
-        document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
-            icono.classList.remove('formulario__grupo-correcto');
-        })
+      if(!datosExistentes){
+      const prestadorActualizado = {
+        dni: DNI,
+        profesion: profesionElegida,
+        fecha:fecNacimiento,
+        matricula: numeroMatricula,
+        especialidad: especialidadElegida,
+        usuario: prestadorLogueado.usuario,
+        apellido: prestadorLogueado.apellido,
+        nombre: prestadorLogueado.nombre,
+        correo: prestadorLogueado.correo,
+        contraseña: prestadorLogueado.contraseña,
+        rol: prestadorLogueado.rol
+      }  
+        datosPrestador.push(prestadorActualizado);
+      // Guardar la lista de prestadores actualizada en el almacenamiento local
+      localStorage.setItem('datosPrestador', JSON.stringify(datosPrestador));
+        
+        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+         setTimeout(() => {
+             document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+         }, 4000); 
+ 
+         document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+             icono.classList.remove('formulario__grupo-correcto');
+         })
+      }else{
+        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+    }
     } else{
         document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
     }
