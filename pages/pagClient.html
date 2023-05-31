@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/tablaTurnos.css">
 </head>
 <body>
     <header class="navcolor">
@@ -123,13 +124,6 @@
             <div class="table-conteiner table align-middle mb-0 bg-white">
               <table class="table-cebra" id="tablaTurnos">
                 <thead class="bg-light">
-                  <tr>
-                    <th>Especialidad</th>
-                    <th>Profesional</th>
-                    <th>Fecha</th>
-                    <th>Turno</th>
-                    <th>Acciones</th>
-                  </tr>
                 </thead>
                 <tbody id="tableBody"></tbody>
               </table>
@@ -146,101 +140,75 @@
             </div>
             <hr style="border: 5px solid;">
             <form id="formSolTurno" class="row g-3 needs-validation formulario" novalidate> 
-              <div class="col-12 col-md-6 col-lg-6">
-                <div class="formulario__grupo formulario__grupo-btn-enviar">
-                  <button type="submit" class="formulario__btn ">Enviar</button>
-                  <button type="reset" class=" btn btn-danger btn-lg m-2">Cancelar</button>
-                  <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
-                </div>
-                
-                <div id="formulario__mensaje" class="formulario__mensaje"></div>   
-                <!-- grupo:Usuario -->
-                <div class="formulario__grupo " id="grupo__usuario1">
-                 <label for="usuario1" class="formulario__label">Usuario</label>
-                 <div class="formulario__grupo-input">
-                 <input type="text" class="formulario__input" name="usuario1" id="usuario1" minlength="6" maxlength="20" value=""  placeholder="">
-                 <i class="formulario__validacion-estado fas fa-times-circle"></i>                    
-               </div>
-                <p class="formulario__input-error">El usuario tiene que ser de 6 a 16 digitos y solo pueden ser letras.</p>
-             </div>  
-
              <div class="formulario__grupo" id="grupo__especialidad">
-              <label for="input-especialidad" class="formulario__label">Especialidad</label>
+              <label for="especialidad" class="formulario__label">Especialidad</label>
               <div class="formulario__grupo-input">
-                <select class="form-select formulario__input" id="input-especialidad" value="" required>
+                <select class="form-select formulario__input" id="especialidad"  value="" required>
                 <option selected disabled value="">Elija una opción</option>
-                <option>Clínica</option>
-                <option>Traumatología</option>
-                <option>Cardiología</option>
-                <option>Oftalmología</option>
-                <option>Gastroenterología</option>
               </select>
+              <i class="formulario__validacion-estado fas fa-times-circle"></i>  
               </div>
+              <p class="formulario__input-error">Por Favor, seleccione una Opcion.</p>
              </div>
-            </div>
-            <div class="formulario__grupo" id="profesional">
-              <label for="input-profesional" class="formulario__label">Profesional</label>
-              <div class="formulario__grupo-input">
-                <select class="form-select formulario__input" id="input-profesional" value="" required>
-                  <option selected disabled value="">Elija una opción</option>
-                  <option>Dr Perez Mario</option>
-                  <option>Dr Sosa Victor</option>
-                  <option>Dr Gomez Luis</option>
-                  <option>Dr Gutierrez Natalia</option>
-                  <option>Dr Lucena Joe</option>
-                </select>
-              </div>
 
-              <div class="valid-feedback">
-                ok
+            <div class="formulario__grupo" id="grupo__profesional">
+              <label for="profesional" class="formulario__label">Profesional</label>
+              <div class="formulario__grupo-input">
+                <select class="form-select formulario__input" id="profesional" value="" required>
+                  <option selected disabled value="">Elija una opción</option>
+
+                </select>
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>  
               </div>
-              <div class="invalid-feedback">
-                valor requerido
-              </div>
+              <p class="formulario__input-error">Por Favor, seleccione una Opcion.</p>
           </div>
           <div class="formulario__grupo" id="grupo__fecha">
             <label for="input-fecha" class="formulario__label">Fecha</label>
             <div class="formulario__grupo-input">
-              <input type="date" name="fecha" id="input-fecha" value="2023-05-15" class="form-control formulario__grupo-input" required>
+              <input type="date" name="fecha" id="input-fecha" value="" class="form-control formulario__grupo-input" required>
+              <i class="formulario__validacion-estado fas fa-times-circle"></i>      
             </div>
+            <p class="formulario__input-error">Por Favor, seleccione una Fecha Valida.</p>
           </div>
-          <div class="formulario__grupo" id="grupo__turno">
-            <label for="input-turno" class="formulario__label">Turno</label>
-            <div class="formulario__grupo-input"></div>
-              <select name="hora" id="input-turno" class="form-control" value="" required>
-                <option value="9:00">9:00</option>
-                <option value="9:30">9:30</option>
-                <option value="10:00">10:00</option>
-                <option value="10:30">10:30</option>
-                <option value="11:00">11:00</option>
+          <div class="formulario__grupo" id="grupo__horaTurno">
+            <label for="horaTurno" class="formulario__label">Turno</label>
+            <div class="formulario__grupo-input">
+              <select name="hora" id="horaTurno" class="form-control" value="" required>
+                <option selected disabled value="">Elija una opción</option>
+
               </select>
-
-
-            <div class="valid-feedback">ok</div>
-            <div class="invalid-feedback">valor requerido</div>
+              <i class="formulario__validacion-estado fas fa-times-circle"></i>  
+              </div>
+              <p class="formulario__input-error">Por Favor, seleccione una Opcion.</p>
           </div>
-         <div class="formulario__grupo" id="grupo__obraSocial">
+         <div class="formulario__grupo" id="grupo__obrasocial">
           <label for="obrasocial" class="formulario__label">Obra Social</label>
-
-          <input type="text" name="obra social" id="obrasocial" class="form-control" minlength="2" maxlength="15" value="" required>
-
-          <div class="valid-feedback">ok</div>
-          <div class="invalid-feedback">valor requerido</div>
-        </div>
-          <div class="formulario__grupo" id="grupo__consulta">
-            <label for="coments" class="formulario__label">Motivo de consulta</label>
-
-            <textarea name="coments" id="coments" cols="15" rows="5" class="form-control" maxlength="100"></textarea>
-
+          <div class="formulario__grupo-input">
+            <input type="text" name="obrasocial" id="obrasocial" class="form-control" minlength="2" maxlength="15" value="" required>
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>  
           </div>
-          <div class="col-6" >
-              <button type="submit" class="btn btn-primary" id="btnAdd" onclick="agregarFila()">Solicitar</button>
-              <button type="submit" class="btn btn-success" >Actualizar</button>
+          <p class="formulario__input-error">Por Favor, Ingrese una Obra Social.</p>
 
+        </div>
+          <div class="formulario__grupo" id="grupo__motivo">
+            <label for="motivo" class="formulario__label">Motivo de consulta</label>
+            <div class="formulario__grupo-input">
+              <textarea name="motivo" id="motivo" cols="15" rows="5" class="form-control" maxlength="100"></textarea>
+              <i class="formulario__validacion-estado fas fa-times-circle"></i>  
+            </div>
+            <p class="formulario__input-error">Por Favor, Ingrese un motivo.</p>
+          </div>          
+          <div class="formulario__grupo formulario__grupo-btn-enviar">
+            <button type="submit" class="formulario__btn" id="btnAdd">Solicitar</button>
+            <button type="submit" class="btn btn-success">Actualizar</button>
+            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+          </div>
+          <div id="formulario__mensaje" class="formulario__mensaje">
+            <p><i class="fas fa-exclamation-triangle"></i> <b>Error: Por favor rellena el formulario correctamente.</b></p>
           </div> 
-      </form>
-            
-            
+        </form>                    
+          </div>
+            <!-- <button type="reset" class=" btn btn-danger btn-lg m-2">Cancelar</button> -->
     
       </div>
         </div>
@@ -249,7 +217,7 @@
 
     </div>
 </main>
-
+<script src="../js/tablaTurnos.js"></script>
 <script src="../js/turnos.js"></script>
 <script src="../js/cargarTablainfoCliente.js"></script>
 <script src="../js/cerrarSesion.js"></script>

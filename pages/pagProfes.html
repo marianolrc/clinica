@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/registroPrestadores.css">
    
 </head>
 <body>
@@ -22,7 +23,7 @@
     <!-- Container wrapper -->
     <div class="container-fluid">
       <!-- Navbar brand -->
-      <a class="navbar-brand" href="#"><span><img src="assets/reddialmed.png" alt="" width="30px"></span></a>
+      <a class="navbar-brand" href="#"><span><img src="../assets/reddialmed.png" alt="" width="30px"></span></a>
 
       <!-- Toggle button -->
       <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
@@ -128,43 +129,40 @@
                     </div>
                     <hr style="border: 5px solid;">
                     
-                <form action="" class="row g-3 needs-validation" novalidate id="formDatosPersProf" >               
-  
-                    <div class="formulario__grupo col-md-4" id="grupo__nombre">
-                      <label for="nombre" class="formulario-label">Nombre</label>
-                      <div class="formulario__grupo-input">
-                        <input type="text" class="formulario__input" name="nombre" id="nombre" minlength="4" maxlength="20" value="" placeholder="" disabled>
-                        <i class="formulario__validacion-estado fas fa-times-circle"></i> 
-                        <p class="formulario__input-error">El nombre tiene que ser de 4 a 16 digitos y solo pueden ser letras.</p>
-                      </div>
-                    </div>
-
-                    <div class="formulario__grupo col-md-4" id="grupo__apellido">
-                      <label for="apellido" class="formulario-label">Apellido</label>
-                        <div class="formulario__grupo-input">
-                        <input type="text" class="formulario__input" name="apellido" id="apellido" minlength="4" maxlength="20" value="" placeholder="" disabled>
-                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                        </div>
-                      <p class="formulario__input-error">El apellido tiene que ser de 4 a 16 digitos y solo pueden ser letras.</p>
-                    </div>
-
-                    <div class="formulario__grupo col-md-4" id="grupo__dni">
+                <form action="" class="row g-3 needs-validation d-flex justify-content-center" novalidate id="formDatosPersProf" >               
+                    <div class="formulario__grupo col-md-6" id="grupo__dni">
                       <label for="dni" class="formulario-label">DNI</label>
                       <div class="formulario__grupo-input">
-                      <input type="number" class="formulario__input" name="dni" id="dni" minlength="8" maxlength="8"value="" placeholder="" >
+                      <input type="text" class="formulario__input" name="dni" id="dni" minlength="8" maxlength="8"value="" placeholder="" >
                       <i class="formulario__validacion-estado fas fa-times-circle"></i>
                       </div>
                       <p class="formulario__input-error">El DNI sólo debe tener números de 8 dígitos.</p>
                     </div>
-          
-                    
-                    <div class="col-md-4">
-                        <label for="profesion" class="formulario-label">Profesión</label>
-                        <input type="text" class="formulario__input" id="profesion" minlength="4" maxlength="20" value="" required placeholder="">
+
+                    <div class="formulario__grupo col-md-6" id="grupo__profesion">
+                      <label for="dni" class="formulario-label">Profesion</label>
+                      <div class="formulario__grupo-input">
+                      <input type="text" class="formulario__input" name="profesion" id="profesion" minlength="7" maxlength="20"value="" placeholder="" >
+                      <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                      </div>
+                      <p class="formulario__input-error">Debe especificar su profesion.</p>
                     </div>
-                    <div class="col-md-4">
-                        <label for="especialidad" class="form-label">Especialidad</label>
-                        <select class="form-select" id="especialidad" required>
+
+                    <div class="formulario__grupo col-md-6" id="grupo__matricula">
+                      <label for="dni" class="formulario-label">Matricula</label>
+                      <div class="formulario__grupo-input">
+                      <input type="text" class="formulario__input" name="matricula" id="matricula" minlength="4" maxlength="6"value="" placeholder="" >
+                      <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                      </div>
+                      <p class="formulario__input-error">Debe ser contener al menos 6 numeros.</p>
+                    </div>
+
+          
+                    <div class="formulario__grupo col-md-6" id="grupo__especialidad">
+                    <label for="especialidad" class="formulario-label">Especialidad</label>
+                      
+                      <div class="formulario__grupo-input">
+                        <select class="form-select formulario__input " id="select">
                           <option selected disabled value="">Elija una opción</option>
                           <option>Clínica</option>
                           <option>Traumatología</option>
@@ -172,66 +170,64 @@
                           <option>Oftalmología</option>
                           <option>Gastroenterología</option>
                         </select>
+                      <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                      </div>
+                      <p class="formulario__input-error">Debe seleccionar una opcion.</p>
                     </div>
-                    <div class="col-md-4">
-                          <label for="matricula" class="form-label">Matrícula</label>
-                          <input type="number" class="formulario__input" id="matricula" minlength="4" maxlength="6"value="" required>
-                    </div>
-  
-                    <div class="col-md-3">
-                        <label for="nacimiento" class="form-label">Fecha de Nacimiento</label>
+
+
+                    <div class="formulario__grupo col-md-6" id="grupo__fecha-nacimiento">
+                      <label for="nacimiento" class="formulario-label">Fecha de Nacimiento</label>
+                      <div class="formulario__grupo-input">
                         <input type="date" class="formulario__input" minlength="21/05/2023" id="nacimiento" value="" >
+                      <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                      </div>
+                      <p class="formulario__input-error">Debe ser mayor de edad.</p>
                     </div>
-                    <div class="col-md-9">
-                      <label for="domicilio" class="form-label">Domicilio</label>
-                      <input type="text" class="formulario__input" id="domicilio" minlength="4" maxlength="20" required>
+          
+          
+                 
+                    <div class="formulario__grupo" id="grupo__terminos">
+                      <label class="formulario__label">
+                        <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                        Acepto los terminos y condiciones.
+                      </label>
+                      <p class="formulario__input-error">Debes aceptar los terminos y condiciones</p> 
                     </div>
-
-
-                    <div class="col-md-4">
-                      <label for="provincia" class="form-label">Provincia</label>
-                      <select class="form-select" id="provincia" required>
-                        <option selected disabled value="">Elija una opción</option>
-                        <option>Tucumán</option>
-                        <option>Santiago del estero</option>
-                        <option>Catamarca</option>
-                        <option>Salta</option>
-                        <option>Jujuy</option>
-                      </select>
+                    <div class="formulario__mensaje" id="formulario__mensaje">
+                      <p><i class="fas fa-exclamation-triangle"></i> <b>Error: Por favor rellena el formulario correctamente.</b></p>
                     </div>
-                    <div class="col-md-4">
-                      <label for="codPostal" class="form-label">Código Postal</label>
-                      <input type="text" class="formulario__input" id="codPostal" minlength="4" maxlength="8" required>
+    
+                    <div class="formulario__grupo formulario__grupo-btn-enviar">
+                      <button type="submit" class="formulario__btn ">Enviar</button>
+                      <button type="reset" class=" btn btn-danger btn-lg m-2">Cancelar</button>
+                      <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
                     </div>
-                    <div class="col-md-4">
-                        <label for="telefono" class="form-label">Telefono</label>
-                        <input type="number" class="formulario__input" id="telefono" minlength="7" maxlength="14" value="" required>
-                    </div>
-  
-                   <div class="col-12">
+                    
+                   <!-- <div class="col-12 m-3 d-flex justify-content-center">
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                        <input class="form-check-input" type="checkbox" value="" id="terminos" required>
                         <label class="form-check-label" for="invalidCheck2">
                           Acepto los términos y condiciones
                         </label>
                       </div>
                     </div>  
-                    <div class="col-lg-3">
-                      <button class="btn btn-dark" type="submit">Enviar</button>
+                    <div class="d-flex justify-content-center">
+                    <div class="m-2">
+                      <button class="btn btn-danger" type="submit">Enviar</button>
                     </div>
-                    <div class="col-lg-9">
+                    <div class=" m-2">
                         <button class="btn btn-dark" type="reset">Limpiar</button>
                         <p class="warnings" id="warnings"></p>
                       </div>
+                    </div>
                     <div class="">
-                       
                         <p class="warnings" id="warnings"></p>
                       </div>
                     <div class="">
-                       
                         <p class="entrar" id="warnings"></p>
-                      </div>
-                  </form>
+                      </div>-->
+                  </form> 
                 </div>
                 </div>   
 
@@ -325,6 +321,7 @@
 
     </div>
 </main>
+<script src="../js/pagProfesional.js"></script>
 <!--<script src="../js/cerrarSesion.js"></script>
 <script src="../js/cargaPagina.js"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

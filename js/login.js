@@ -9,9 +9,7 @@ document.getElementById('form-login').addEventListener('submit', function(event)
 
   // Obtener usuarios existentes del almacenamiento local
   const pacientes = JSON.parse(localStorage.getItem('pacientes')) || [];
-
-  const prestadores = JSON.parse(localStorage.getItem('prestadores')) || [];
-
+  const prestadores = JSON.parse(localStorage.getItem('prestadores') || []);
   // Verificar si el usuario existe y la contraseña coincide
   const existenciaPaciente = pacientes.find(paciente => paciente.usuario === usuario && paciente.password === contraseña && paciente.rol === rol);
   if (existenciaPaciente) {
@@ -38,24 +36,25 @@ document.getElementById('form-login').addEventListener('submit', function(event)
     alert('Nombre de usuario, contraseña o tipo de usuario incorrectos. Por favor, intenta nuevamente.');
   }
 
-    const existenciaPrestadores = prestadores.find(prestador => prestador.usuario === usuario && prestador.password === password && prestador.rol === rol);
-    if(existenciaPrestadores){
-      const prestadorLogueado = {
-        usuario: existenciaPrestadores.usuario,
+  const existenciaPrestadores = prestadores.find(prestador => prestador.usuario === usuario && prestador.password === password && prestador.rol === rol);
+  if(existenciaPrestadores){
+  const prestadorLogueado = {
+       usuario: existenciaPrestadores.usuario,
         nombre: existenciaPrestadores.nombre,
         apellido: existenciaPrestadores.apellido,
         correo: existenciaPrestadores.correo,
         password: existenciaPrestadores.password,
         password2: existenciaPrestadores.password2,
         rol: existenciaPrestadores.rol,
-
       };
       alert('Inicio de sesion exitoso!');
 
       window.location.href = '../pages/pagProfes.html';
 
-      localStorage.setItem('isLoggedIn, true');
+      localStorage.setItem('isLoggedIn', true);
       localStorage.setItem('prestadorLogueado', JSON.stringify(prestadorLogueado));
+    }else{
+      alert('Nombre de usuario, contraseña o tipo de usuario incorrecto. Por favor, intente nuevamente.');
     }
 
 
