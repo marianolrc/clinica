@@ -185,7 +185,7 @@ selects.forEach((select) => {
   
   // Obtiene los pacientes existentes del localstorage o crea un nuevo array vacío
   let turnos = JSON.parse(localStorage.getItem('turnos')) || [];
-  
+  let paciente = JSON.parse(localStorage.getItem('usuarioLogueado') || []);
 
 
 
@@ -224,8 +224,10 @@ selects.forEach((select) => {
           motivo: motivoConsulta,
           especialidad: especialidadProf,
           profesional: profesionalElegido,
-          turno: turnoElegido
-
+          turno: turnoElegido,
+          nombre:paciente.nombre,
+          apellido: paciente.apellido,
+          dni: paciente.dni
         }
 
 

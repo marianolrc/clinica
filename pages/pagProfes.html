@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/modal.css">
     <link rel="stylesheet" href="../css/registroPrestadores.css">
+    <link rel="stylesheet" href="../css/tablaTurnos.css">
    
 </head>
 <body>
@@ -94,8 +95,8 @@
               aria-controls="" aria-selected="true">Historia Clínica</button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link" data-bs-toggle="tab" id="home-tab" type="button" data-bs-target="" role="tab"
-              aria-controls="" aria-selected="true">Turnos asignados</button>
+              <button class="nav-link" data-bs-toggle="tab" id="turnoAsig-tab" type="button" data-bs-target="#turnoAsig" role="tab"
+              aria-controls="turnoAsig" aria-selected="true">Turnos asignados</button>
             </li>
             <li class="nav-item" role="presentation">
               <button class="nav-link" data-bs-toggle="tab" id="datosPer-tab" type="button" data-bs-target="#datosPer" role="tab"
@@ -117,6 +118,14 @@
           
             <div class="tab-pane fade show" role="tabpanel" id="atenPac" aria-labelledby="atenPac-tab">
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium est perferendis tenetur debitis ullam similique autem, vitae hic voluptatum. Laborum, minus. Ea quod cumque dolores ipsa at exercitationem molestias aperiam?</p>
+            </div>    
+                
+            <div class="tab-pane fade show" role="tabpanel" id="turnoAsig" aria-labelledby="turnoAsig-tab">
+              <table class="table-cebra" id="tablaTurnos">
+                <thead class="bg-light">
+                </thead>
+                <tbody id="tableBody"></tbody>
+              </table>
             </div>    
                 
 
@@ -289,6 +298,7 @@
 
     </div>
 </main>
+<script src="../js/tablaTurnosProf.js"></script>
 <script src="../js/pagProfesional.js"></script>
 <!--<script src="../js/cerrarSesion.js"></script>
 <script src="../js/cargaPagina.js"></script>-->
