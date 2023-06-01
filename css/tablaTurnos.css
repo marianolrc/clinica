@@ -1,14 +1,29 @@
 /* Estilos para la tabla */
+
 #tablaTurnos {
     width: 100%;
     border-collapse: collapse;
+    background: linear-gradient(to right, rgba(255, 251, 213, .5), rgba(178, 10, 44, .5));
+    box-shadow: 2px 2px 8px rgba(178, 10, 44, .3);
+    
   }
   
   #tablaTurnos th,
   #tablaTurnos td {
-    padding: 10px;
+    padding: 1rem;
     text-align: left;
-    border: 1px solid #ddd;
+    border: 3px solid #000;
+
+
+  }
+  #tablaTurnos th{
+    color: #000;
+    font-size: 20px;
+    text-shadow: 2px 2px 6px #fff;
+  }
+  #tablaTurnos td{
+    font-weight: 600;
+    font-size: 16px;
   }
   
   /* Estilos para las acciones de la tabla */
@@ -20,15 +35,30 @@
   }
   
   #tablaTurnos .btn-primary {
-    background-color: #007bff;
+    background: linear-gradient(#AA076B,#61045F);
     color: #fff;
     border: none;
+    border-radius: 100%;
+
+  }
+  #tablaTurnos .btn-primary:hover {
+    transition: all 0.5s;
+    background: linear-gradient(#61045F,#DD2476);
+    box-shadow: 1px 1px 4px #DD2476;
+    transform: scale(1.1);
   }
   
   #tablaTurnos .btn-dark {
-    background-color: #343a40;
+    background: linear-gradient(#232526,#414345);
     color: #fff;
     border: none;
+    border-radius: 100%;
+  }
+  #tablaTurnos .btn-dark:hover {
+    transition: all 0.5s;
+    background: linear-gradient(#0f2027, #203a43, #2c5364);
+    transform: scale(1.1);
+    box-shadow: 1px 1px 4px #2c5364;
   }
   
   /* Estilos para hacer responsive la tabla */
