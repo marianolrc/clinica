@@ -1,31 +1,103 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-
-.navcolor{
-    background: #2193b0;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-}
-header nav a{
     font-family: 'Montserrat';
-    font-weight: 600;
-    
 }
-.navbar-brand{
-    color: #eef2f3;
-    
-}
+
+
 
 body{
-    /* background: #8e9eab; 
-    background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab); 
-    background: linear-gradient(to right, #eef2f3, #8e9eab ); */
     background: rgb(238,242,243);
     background: radial-gradient(circle, rgba(238,242,243,1) 0%, rgba(142,158,171,1) 100%);
 }
+
+
+
+
+/*boton propaganda*/
+
+.btnpropaganda{
+    margin-left: 10rem;
+}
+/*cards ofreciendo servicios*/
+
+  .card1 {
+    width: 25rem;
+    height: 30rem;
+    border-radius: 20px;
+    background: #ffffff;
+    position: relative;
+    padding: 1rem;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    margin-top: 1rem;
+   }
+   
+   .card1-details {
+    color: rgb(222, 76, 50);
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
+
+   }
+   
+   .card1-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #008bf8;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+   }
+   
+   /*Hover*/
+   .card1:hover {
+    border-color: #008bf8;
+    box-shadow: 10px 4px 18px 10px rgba(0, 0, 0, 0.25);
+   }
+   
+   .card1:hover .card1-button {
+    transform: translate(-50%, 30%);
+    opacity: 2;
+   }
+
+
+
+.container-banner {
+width: 100%;
+padding-bottom: 2rem;
+}
+
+.video-st {
+    width: 100%;
+    /* height: 100%; */
+}
+
+video {
+    display: block;
+    width: 100%;
+    height: 500px;
+    max-height: 80vh;
+    object-fit:fill;
+    margin: 0 auto;
+  }
+
+  /* eliminamos el scroll horiz */
+
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
