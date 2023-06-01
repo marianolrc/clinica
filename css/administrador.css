@@ -3,28 +3,6 @@
     font-family: 'Montserrat';
 }   
 
-.navcolor{
-    background: #2193b0;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #651ee9, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #651ee9, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-}
-
-
-.btn {
-  padding: .45rem 1.5rem .35rem;
-}
-
-header nav a{
-    font-weight: 900;
-    font-size: 1.25em;
-    color: aliceblue;
-    text-shadow: 2px 2px 4px white;
-}
-.navbar-brand{
-    color: #eef2f3;
-    
-}
 
 body {
     
@@ -36,7 +14,7 @@ body {
   
 }
 .container{
-font-size: 25px;
+    font-size: 25px;
 }
 
 

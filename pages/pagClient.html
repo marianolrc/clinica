@@ -10,74 +10,66 @@
     <link rel="shortcut icon" href="../assets/img/reddialmed.png" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/SolicitarTurno.css">
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/tablaTurnos.css">
 </head>
 <body>
-    <header class="navcolor">
-        <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark gradient-custom">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-      <!-- Navbar brand -->
-      <a class="navbar-brand" href="#"><span><img src="assets/reddialmed.png" alt="" width="30px"></span></a>
+  <header class="navcolor">
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark gradient-custom">
+<!-- Container wrapper -->
+<div class="container-fluid">
+  <!-- Navbar brand -->
+  <a class="navbar-brand" href="#"><span><img src="../assets/img/reddialmed.png" alt="" width="30px"></span></a>
 
-      <!-- Toggle button -->
-      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <i class="fas fa-bars text-light"></i>
-      </button>
+  <!-- Toggle button -->
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <i class="fas fa-bars text-light"></i>
+  </button>
 
-      <!-- Collapsible wrapper -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- Left links -->
-        <ul class="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
-          <li class="nav-item text-center mx-2 mx-lg-1">
-            <a class="nav-link active" aria-current="page" href="../index.html">
-              <div>
-                <i class="fas fa-home fa-lg mb-1"></i>
-              </div>
-              Inicio
-            </a>
-          </li>
-          <li class="nav-item text-center mx-2 mx-lg-1">
-            <a class="nav-link" href="nosotros.html">
-              <div>
-                <i class="far fa-envelope fa-lg mb-1"></i>
+  <!-- Collapsible wrapper -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <!-- Left links -->
+    <ul class="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
+      <li class="nav-item text-center mx-2 mx-lg-1">
+        <a class="nav-link active" aria-current="page" href="../index.html">
+          <div>
+            <i class="fas fa-home fa-lg mb-1"></i>
+          </div>
+          Inicio
+        </a>
+      </li>
+      <li class="nav-item text-center mx-2 mx-lg-1">
+        <a class="nav-link" href="#">
+          <div>
+            <i class="far fa-envelope fa-lg mb-1"></i>
 
-              </div>
-              Sobre Nosotros
-            </a>
-          </li>
-          <li class="nav-item text-center mx-2 mx-lg-1">
-            <a class="nav-link" href="tablaPrest.html">
-              <div>
-                <i class="far fa-envelope fa-lg mb-1"></i>
+          </div>
+          Sobre Nosotros
+        </a>
+      </li>
+      <li class="nav-item text-center mx-2 mx-lg-1">
+        <a class="nav-link" href="tablaPrest.html">
+          <div>
+            <i class="far fa-envelope fa-lg mb-1"></i>
 
-              </div>
-              Cartilla Medica
-            </a>
-          </li>
+          </div>
+          Cartilla Medica
+        </a>
+      </li>
 
-        </ul>
-        <!-- Left links -->
-
-        <!-- Right links -->
-
-        <!-- Right links -->
+    </ul>
+    <!-- Left links -->
 
 
-      </div>
-      <!-- Collapsible wrapper -->
-    </div>
-    <!-- Container wrapper -->
-  </nav>
-  <!-- Navbar -->
-
-  
+  </div>
+  <!-- Collapsible wrapper -->
+</div>
+<!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
 
 </header>
 <main>
@@ -109,7 +101,7 @@
           </ul>
         </nav>
         <div class="tab-content" id="myTabControl">
-          <div class="tab-pane" role="tabpanel" id="info" aria-labelledby="info-tab">
+          <div class="tab-pane table-responsive" role="tabpanel" id="info" aria-labelledby="info-tab">
             <table class="table align-middle mb-0 bg-white">
               <thead class="bg-light">
                 <th class="text-center">Datos del usuario</th>
@@ -121,7 +113,7 @@
             </table>
           </div>
           <div class="tab-pane fade show" role="tabpanel" id="misTurnos" aria-labelledby="miturn-tab">
-            <div class="table-conteiner table align-middle mb-0 bg-white">
+            <div class="table align-middle mb-0 bg-white table-responsive">
               <table class="table-cebra" id="tablaTurnos">
                 <thead class="bg-light">
                 </thead>
