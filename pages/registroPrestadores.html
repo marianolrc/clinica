@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="../css/registroPrestadores.css">
     <link rel="shortcut icon" href="../assets/img/reddialmed.png" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/componentes.css">
+
    
 </head>
 <body>
@@ -21,11 +20,11 @@
 <!-- Container wrapper -->
 <div class="container-fluid">
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#"><span><img src="assets/reddialmed.png" alt="" width="30px"></span></a>
+  <a class="navbar-brand" href="#"><span><img src="../assets/img/reddialmed.png" alt="" width="30px"></span></a>
 
   <!-- Toggle button -->
-  <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
     aria-label="Toggle navigation">
     <i class="fas fa-bars text-light"></i>
   </button>
@@ -65,27 +64,26 @@
     <!-- Left links -->
 
     <!-- Right links -->
-                <!-- Elementos que aparecen mientras la sesion no esta iniciada -->
-                <ul class="navbar-nav ms-auto d-flex flex-row mt-3 mt-lg-0">
-                  <li class="nav-item text-center mx-2 mx-lg-1" id="navbar-login">
-                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                          Ingresar                      
-                        </a>
-                  </li>
-                  <li class="nav-item text-center mx-2 mx-lg-1" id="navbar-reg">
-                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#ModalReg">
-                      Registrarse                      
+            <!-- Elementos que aparecen mientras la sesion no esta iniciada -->
+            <ul class="navbar-nav ms-auto d-flex flex-row mt-3 mt-lg-0">
+              <li class="nav-item text-center mx-2 mx-lg-1" id="navbar-login">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      Ingresar                      
                     </a>
-                  </li>
-                   <!-- Fin de los Elementos que aparecen mientras la sesion no esta iniciada -->
-                   <!-- Elementos que aparecen mientras la sesion esta iniciada -->
-                  <li class="nav-item text-center mx-2 mx-lg-1" style="display: none;" id="navbar-logout">
-                    <a class="nav-link" id="logout-link" href="#">
-                      Cerrar Sesion                      
-                    </a>
-                  </li>
-                  </ul>
-                   <!-- Fin de los Elementos que aparecen mientras la sesion esta iniciada -->  
+              </li>
+              <li class="nav-item text-center mx-2 mx-lg-1" id="navbar-reg">
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#ModalReg">
+                  Registrarse                      
+                </a>
+              </li>
+               <!-- Fin de los Elementos que aparecen mientras la sesion no esta iniciada -->
+               <!-- Elementos que aparecen mientras la sesion esta iniciada -->
+              <li class="nav-item text-center mx-2 mx-lg-1" style="display: none;" id="navbar-logout">
+                <a class="nav-link" id="logout-link" href="#">
+                  Cerrar Sesion                      
+                </a>
+              </li>
+               <!-- Fin de los Elementos que aparecen mientras la sesion esta iniciada -->  
     <!-- Right links -->
 
   </div>
@@ -124,8 +122,6 @@
 
             </div>
 
-            <!-- <p class="text-center">O:</p> -->
-
             <!-- Email input -->
             <div class="form-outline mb-4">
               <input  type="text" name="usuario" id="usuario" class="form-control" value="" required minlength="6" maxlength="18">
@@ -138,12 +134,14 @@
               <label class="form-label" for="loginPassword" style="margin-left: 0px;">Contraseña</label>
             <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64.8px;"></div><div class="form-notch-trailing"></div></div></div>
 
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
 
 
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary boton-log">Ingresar</button>
 
-
+            </div>
           </form>
         </div>
       </div>
@@ -153,6 +151,7 @@
 </div>
 </div>
 <!-- Fin Modal Ingresar -->
+
 </header>
 
 <!-- Inicio Modal Registrar -->

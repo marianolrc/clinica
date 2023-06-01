@@ -9,7 +9,11 @@ body{
     background: url(../assets/img/background-clinica2.jpg) no-repeat;
     background-position: center;
     background-size: cover;
+    max-width: 100%;
+    overflow-x: hidden;
 }
+
+
 
 .cont-cliente .nav-tabs{
     background-image: radial-gradient(#2980B9,#6DD5FA);
@@ -27,22 +31,17 @@ body{
 }
 
 /*formulario solicitar turno*/
-
+/*formulario registro de pacientes*/
 .container{
     width: 80%;
-    max-width: 1200px;
-    min-width: 600px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 25px;
-    padding: 25px 25px;
+    margin: 2rem auto;
     background-color:rgba(79, 64, 123, 0.5);
     font-weight: bold;
     border-radius: 0.5em;
     box-shadow: inset 1px 1px 22px 4px;
  
  }
+
  
  .imagen{
     width: 100px;
