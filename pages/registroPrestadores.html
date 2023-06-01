@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Pacientes</title>
+    <title>Registro de Prestadores</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/registrodepacientes.css">
+    <link rel="stylesheet" href="../css/registroPrestadores.css">
     <link rel="shortcut icon" href="../assets/img/reddialmed.png" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/modal.css">
+   
 </head>
 <body>
   <header class="navcolor">
@@ -124,7 +125,7 @@
 
             <!-- <p class="text-center">O:</p> -->
 
-            <!-- User input -->
+            <!-- Email input -->
             <div class="form-outline mb-4">
               <input  type="text" name="usuario" id="usuario" class="form-control" value="" required minlength="6" maxlength="18">
               <label class="form-label" for="loginName" style="margin-left: 0px;">Usuario</label>
@@ -135,6 +136,8 @@
               <input type="password" name="password" id="contraseña" class="form-control" value="" required minlength="6" maxlength="20">
               <label class="form-label" for="loginPassword" style="margin-left: 0px;">Contraseña</label>
             <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64.8px;"></div><div class="form-notch-trailing"></div></div></div>
+
+
 
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary boton-log">Ingresar</button>
@@ -149,126 +152,102 @@
 </div>
 </div>
 <!-- Fin Modal Ingresar -->
-
-
 </header>
-    <!--Inicio formulario registro de pacientes-->
+
 <!-- Inicio Modal Registrar -->
-<div class="modal fade login-mdl" id="ModalReg" tabindex="-1" aria-labelledby="ModalRegLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content text-center">
-      <div class="modal-header bg-dark text-white d-flex justify-content-center">
-        <h5 class="modal-title texto-regcomo" id="exampleModalLabel">Registrar Como:</h5>
-      </div>
-      <div class="modal-body  d-flex justify-content-between">
-        <a type="button" href="registropaciente.html" class="btn btn-outline-primary">Paciente</a>
-        <a type="button" href="registroPrestadores.html" class="btn btn-outline-primary">Prestador</a>
-      </div>
+<div class="modal fade login-mdl" id="ModalReg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-sm">
+  <div class="modal-content text-center">
+    <div class="modal-header bg-dark text-white d-flex justify-content-center">
+      <h5 class="modal-title texto-regcomo" id="exampleModalLabel">Registrar Como:</h5>
+    </div>
+    <div class="modal-body  d-flex justify-content-between">
+      <a type="button" href="registropaciente.html" class="btn btn-outline-primary">Paciente</a>
+      <a type="button" href="registroPrestadores.html" class="btn btn-outline-primary">Prestador</a>
     </div>
   </div>
-  </div>
-  <!-- Fin Modal Registrar -->
-    <main class="container mt-4 container-fluid">
+</div>
+</div>
+<!-- Fin Modal Registrar -->
+    <!--Inicio formulario registro de pacientes-->
+    <main class="container mt-4 ">
         <div class="contenedor-img">
           <img class="imagen" src="../assets/img/registro de paciente.png" width="50px" class="reg-img" alt="registro de pacientes">
-          <h3>Registro de Pacientes</h3>
+          <h3>Registro de Prestadores</h3>
+      
         </div>
         <hr style="border: 5px solid;">
-            <form id="formulario" class="row g-3 needs-validation formulario" novalidate>
-
-                 <!-- grupo:Usuario -->
+            <form class=" formulario" id="formulario">
+              
+              <!-- grupo:Usuario -->
                 <div class="formulario__grupo " id="grupo__usuario1">
                     <label for="usuario1" class="formulario__label">Usuario</label>
                     <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="usuario1" id="usuario1" minlength="6" maxlength="20" value=""  placeholder="">
+                    <input type="text" class="formulario__input" name="usuario1" id="usuario1"  minlength="4" maxlength="20" value=""  placeholder="">
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>                    
                   </div>
                    <p class="formulario__input-error">El usuario tiene que ser de 6 a 16 digitos y solo pueden ser letras.</p>
                 </div>
-                  
+
+              <!--   grupo: Nombre -->
+                <div class=" formulario__grupo" id="grupo__nombre">
+                    <label for="nombre" class="formulario__label">Nombre</label>
+                    <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="nombre" id="nombre"  minlength="4" maxlength="20" value=""  placeholder="">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>                    
+                  </div>
+                   <p class="formulario__input-error">El nombre tiene que ser de 4 a 16 digitos y solo pueden ser letras.</p>
+                </div>
+
+              <!--   grupo: Apellido -->
+                <div class="formulario__grupo" id="grupo__apellido">
+                    <label for="apellido" class="formulario__label">Apellido</label>
+                    <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="apellido" id="apellido"  minlength="4" maxlength="20" value=""  placeholder="">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>                    
+                                      
+                  </div>
+                   <p class="formulario__input-error">El apellido tiene que ser de 4 a 16 digitos y solo pueden ser letras.</p>
+                </div>
+
               <!--   grupo: Correo Electronico -->
                 <div class=" formulario__grupo" id="grupo__correo">
-                  <label for="correo" class="formulario__label">Email</label>
-                  <div class="formulario__grupo-input">
-                  <input type="email" class="formulario__input" name="correo" id="correo"  minlength="4" maxlength="40" value=""  placeholder="correo@correo.com">
-                  <i class="formulario__validacion-estado fas fa-times-circle"></i>                    
-                </div>
-                 <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos y guion bajo. </p>
-              </div>
-
-                  <!--   grupo: Contraseña -->
-                <div class=" formulario__grupo" id="grupo__password">
-                  <label for="password" class="formulario__label">Contraseña</label>
-                  <div class="formulario__grupo-input">
-                  <input type="password" class="formulario__input" name="password" id="password"  minlength="6" maxlength="20" value=""  placeholder="">
-                  <i class="formulario__validacion-estado fas fa-times-circle"></i>                    
-                </div>
-                 <p class="formulario__input-error">La contraseña tiene que ser de 6 a 12 digitos. </p>
-              </div>
-              <!--   grupo: contraseña 2-->
-              <div class=" formulario__grupo" id="grupo__password2">
-                <label for="password2" class="formulario__label">Repetir Contraseña</label>
-                <div class="formulario__grupo-input">
-                <input type="password" class="formulario__input" name="password2" id="password2"  minlength="6" maxlength="20" value="" placeholder="">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>                    
-              </div>
-               <p class="formulario__input-error">Ambas contraseñas deben ser iguales. </p>
-            </div>
-
-                <!--   grupo: Apellido -->
-                <div class="formulario__grupo" id="grupo__apellido">
-                  <label for="apellido" class="formulario__label">Apellido</label>
-                  <div class="formulario__grupo-input">
-                  <input type="text" class="formulario__input" name="apellido" id="apellido"  minlength="4" maxlength="20" value=""  placeholder="">
-                  <i class="formulario__validacion-estado fas fa-times-circle"></i>                    
-                                    
-                </div>
-                 <p class="formulario__input-error">El apellido tiene que ser de 4 a 16 digitos y solo pueden ser letras.</p>
-              </div>
-
-                <!--   grupo: Nombre -->
-                <div class=" formulario__grupo" id="grupo__nombre">
-                  <label for="nombre" class="formulario__label">Nombre</label>
-                  <div class="formulario__grupo-input">
-                  <input type="text" class="formulario__input" name="nombre" id="nombre"  minlength="4" maxlength="20" value=""  placeholder="">
-                  <i class="formulario__validacion-estado fas fa-times-circle"></i>                    
-                </div>
-                 <p class="formulario__input-error">El nombre tiene que ser de 4 a 16 digitos y solo pueden ser letras.</p>
-              </div>
-
-                  <!-- Grupo: Fecha de nacimiento -->
-                  <div class="formulario__grupo" id="grupo__fecha-nacimiento">
-                    <label for="fechanacimiento" class="formulario__label">Fecha de nacimiento</label>
+                    <label for="correo" class="formulario__label">Correo Electronico</label>
                     <div class="formulario__grupo-input">
-                      <input type="date" class="formulario__input" name="fechanacimiento" id="fechanacimiento" placeholder="YYYY-MM-DD">
-                      <i class="formulario__validacion-estado fas fa-times-circle"></i>                    
-                    </div>
-                    <p class="formulario__input-error">Por favor, introduce una fecha válida.</p>
+                    <input type="email" class="formulario__input" name="correo" id="correo"  minlength="4" maxlength="30" value=""  placeholder="correo@correo.com">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>                    
                   </div>
-       
-                  <!-- Grupo: DNI -->
-                    <div class="formulario__grupo" id="grupo__dni">
-                      <label for="dni" class="formulario__label">N° de Documento</label>
-                      <div class="formulario__grupo-input">
-                        <input type="text" class="formulario__input" name="dni" id="dni" minlength="8" maxlength="8" pattern="[0-9]{8}" placeholder="Ingrese su DNI" required>
-                        <i class="formulario__validacion-estado fas fa-times-circle"></i>                    
-                      </div>
-                      <p class="formulario__input-error">El DNI debe tener 8 dígitos numéricos.</p>
-                    </div>
+                   <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos y guion bajo. </p>
+                </div>
 
-                  <!-- grupo: Terminos y condiciones -->
+              <!--   grupo: Contraseña -->
+                <div class=" formulario__grupo" id="grupo__password">
+                    <label for="password" class="formulario__label">Contraseña</label>
+                    <div class="formulario__grupo-input">
+                    <input type="password" class="formulario__input" name="password" id="password"  minlength="6" maxlength="20" value=""  placeholder="">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>                    
+                  </div>
+                   <p class="formulario__input-error">La contraseña tiene que ser de 6 a 18 digitos. </p>
+                </div>
+              <!--   grupo: contraseña 2-->
+                <div class=" formulario__grupo" id="grupo__password2">
+                    <label for="password2" class="formulario__label">Repetir Contraseña</label>
+                    <div class="formulario__grupo-input">
+                    <input type="password" class="formulario__input" name="password2" id="password2"  minlength="4" maxlength="20" value="" placeholder="">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>                    
+                  </div>
+                   <p class="formulario__input-error">Ambas contraseñas deben ser iguales. </p>
+                </div>
+              <!-- grupo: Terminos y condiciones -->
                 <div class="formulario__grupo" id="grupo__terminos">
                   <label class="formulario__label">
-                    <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos" required>
+                    <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
                     Acepto los terminos y condiciones.
                   </label>
-                  <p class="formulario__input-error">Debes aceptar los terminos y condiciones.</p>
+                  <p class="formulario__input-error">Debes aceptar los terminos y condiciones</p> 
                 </div>
                 <div class="formulario__mensaje" id="formulario__mensaje">
                   <p><i class="fas fa-exclamation-triangle"></i> <b>Error: Por favor rellena el formulario correctamente.</b></p>
-                </div>
-                <div class="formulario__mensaje2" id="formulario__mensaje2">
-                  <p><i class="fas fa-exclamation-triangle"></i> <b>Error: El usuairo y/o correo ya existen.</b></p>
                 </div>
 
                 <div class="formulario__grupo formulario__grupo-btn-enviar">
@@ -277,14 +256,12 @@
                   <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
                 </div>
 
-                <div id="formulario__mensaje" class="formulario__mensaje"></div>
-                <script src="../js/regPaciente.js"></script>
+              </form>
 
 
-        
-            </form>
+         
     </main>
-    <!--fin formulario registro de pacientes-->
+    <!--fin formulario registro de prestadores-->
 
     <footer>
       <div class="container-fluid text-white p-3" style="font-family: 'Poppins' , sans-serif; background: #0f0c29; background: linear-gradient(to right, #24243e, #302b63, #0f0c29);">
@@ -342,6 +319,10 @@
 
     <script src="../js/cambiarNav.js"></script>
     <script src="../js/login.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="../js/registroPrestadores.js"></script>
+    <script src="https://kit.fontawesome.com/d952dcf1eb.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script> 
+  
 </body>
 </html>

@@ -1,7 +1,7 @@
-
 // Escuchar el evento submit del formulario
 document.getElementById('form-login').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevenir el envío del formulario
+
 
   // Obtener los valores de los campos
   const usuario = document.getElementById('usuario').value;
@@ -10,49 +10,102 @@ document.getElementById('form-login').addEventListener('submit', function(event)
 
   // Obtener usuarios existentes del almacenamiento local
   const pacientes = JSON.parse(localStorage.getItem('pacientes')) || [];
-
   // Verificar si el usuario existe y la contraseña coincide
-  const existenciaPaciente = pacientes.find(paciente => paciente.usuario === usuario && paciente.contraseña === contraseña && paciente.rol === rol);
+  const existenciaPaciente = pacientes.find(paciente => paciente.usuario === usuario && paciente.password === contraseña && paciente.rol === rol);
   if (existenciaPaciente) {
+    // Crear un objeto del usuario logueado con todos los datos del paciente
+    const usuarioLogueado = {
+      usuario: existenciaPaciente.usuario,
+      correo: existenciaPaciente.correo,
+      password: existenciaPaciente.password,
+      password2: existenciaPaciente.password2,
+      apellido: existenciaPaciente.apellido,
+      nombre: existenciaPaciente.nombre,
+      fecNacimiento: existenciaPaciente.fecNacimiento,
+      dni: existenciaPaciente.dni,
+      rol: existenciaPaciente.rol
+    };
+  
     alert('Inicio de sesión exitoso!');
-    // redirigir a la página de Cliente
-      window.location.href = '../pages/pagClient.html'
-      // window.location.assign('../pages/pagClient.html');
-      // Guardar el estado de inicio de sesión en el localStorage
-      localStorage.setItem('isLoggedIn', true);
+  
+    window.location.href = '../pages/pagClient.html';
+  
+    localStorage.setItem('isLoggedIn', true);
+    localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioLogueado));
+  }
 
-  } else {
-    alert('Nombre de usuario, contraseña o tipo de usuario incorrectos. Por favor, intenta nuevamente.');
+  const prestadores = JSON.parse(localStorage.getItem('prestadores') || []);
+
+  const existenciaPrestador = prestadores.find(prestador => prestador.usuario === usuario && prestador.contraseña === contraseña && prestador.rol === rol)
+  if(existenciaPrestador){
+    const prestadorLogueado = {
+      usuario: existenciaPrestador.usuario,
+      correo: existenciaPrestador.correo,
+      nombre: existenciaPrestador.nombre,
+      apellido: existenciaPrestador.apellido,
+      contraseña: existenciaPrestador.contraseña,
+      contraseña2: existenciaPrestador.contraseña2,
+      rol: existenciaPrestador.rol
+
+    }
+
+    alert('Inicio de sesión exitoso!');
+  
+    window.location.href = '../pages/pagClient.html';
+  
+    localStorage.setItem('isLoggedIn', true);
+    localStorage.setItem('prestadorLogueado', JSON.stringify(prestadorLogueado));
+  }
+
+  const existenciaPrestadores = prestadores.find(prestador => prestador.usuario === usuario && prestador.password === password && prestador.rol === rol);
+  if(existenciaPrestadores){
+  const prestadorLogueado = {
+       usuario: existenciaPrestadores.usuario,
+        nombre: existenciaPrestadores.nombre,
+        apellido: existenciaPrestadores.apellido,
+        correo: existenciaPrestadores.correo,
+        password: existenciaPrestadores.password,
+        password2: existenciaPrestadores.password2,
+        rol: existenciaPrestadores.rol,
+      };
+      alert('Inicio de sesion exitoso!');
+
+      window.location.href = '../pages/pagProfes.html';
+
+      localStorage.setItem('isLoggedIn', true);
+      localStorage.setItem('prestadorLogueado', JSON.stringify(prestadorLogueado));
+    }
+
+  const admin = {
+    usuario: 'admin1',
+    contraseña: 'admin123',
+    rol: 'admin'
   }
 
 
+// Verificar si el usuario y la contraseña coinciden con el usuario admin
+if (usuario === admin.usuario && contraseña === admin.contraseña && rol === admin.rol) {
+  // Crear un objeto del usuario admin con los datos correspondientes
+  const adminLogueado = {
+    usuario: admin.usuario,
+    contraseña: admin.contraseña,
+    rol: admin.rol
+  };
 
-//   // Verificar el estado de inicio de sesión almacenado en el localStorage
-//   const isLoggedIn = localStorage.getItem('isLoggedIn');
+  alert('Inicio de sesión exitoso como administrador!');
 
-//   // Si no se ha iniciado sesión, redirigir a la página de inicio de sesión
-//   if (!isLoggedIn) {
-//   window.location.href = 'index.html'; // Reemplaza 'login.html' con la URL de la página de inicio de sesión
-// }
+  // Redirigir a la página de administrador
+  window.location.href = '../pages/administrador.html';
 
-  // Limpiar los campos del formulario
-  document.getElementById('usuario').value = '';
-  document.getElementById('password').value = '';
+  localStorage.setItem('isLoggedIn', true);
+  localStorage.setItem('adminLogueado', JSON.stringify(adminLogueado));
+}else{
+  alert('Nombre de usuario, contraseña o tipo de usuario incorrecto. Por favor, intente nuevamente.');
+}
 
 
+
+  document.getElementById('form-login').reset();
 });
 
 
-
-
-
-
-/*
-const role = localStorage.getItem('role');
-
-if (role === 'admin') {
-  // mostrar opciones de administrador
-} else {
-  // mostrar opciones de usuario normal
-}
- */
