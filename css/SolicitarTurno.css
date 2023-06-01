@@ -5,6 +5,11 @@
     padding: 0;
 
 }
+body{
+    background: url(../assets/img/background-clinica2.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 
 .cont-cliente .nav-tabs{
     background-image: radial-gradient(#2980B9,#6DD5FA);
@@ -32,7 +37,7 @@
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 25px;
     padding: 25px 25px;
-    background-color:rgba(79, 64, 123, 0.3);
+    background-color:rgba(79, 64, 123, 0.5);
     font-weight: bold;
     border-radius: 0.5em;
     box-shadow: inset 1px 1px 22px 4px;
